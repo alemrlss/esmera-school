@@ -2,5 +2,5 @@
 
 @plugin "daisyui" {
     prefix: "d-";
-    themes: all;
+    themes: light --default, dark --prefersdark;
   }
