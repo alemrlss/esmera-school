@@ -18,7 +18,6 @@ function Navbar() {
     document.querySelector("html")?.setAttribute("data-theme", localTheme!);
   }, [theme]);
 
-
   return (
     <div className="d-navbar bg-base-100 shadow-2xl">
       <div className="d-navbar-start">
@@ -155,13 +154,9 @@ function Navbar() {
           </li>
         </ul>
       </div>
-      <div>
-      <ThemeToggleButton />
 
-     
-      </div>
       <div className="d-navbar-end hidden lg:flex">
-        <div className="border rounded-lg">
+        <div className="border rounded-lg mr-4">
           <a
             href="tel:+1234567890"
             className="d-btn d-btn-ghost flex items-center"
@@ -169,6 +164,9 @@ function Navbar() {
             <Phone className="h-5 w-5" />
             +1 (234) 567-890
           </a>
+        </div>
+        <div>
+          <ThemeToggleButton />
         </div>
       </div>
     </div>
