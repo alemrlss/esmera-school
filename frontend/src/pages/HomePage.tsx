@@ -1,38 +1,171 @@
-import Carousel from '../components/Caraousel'
+import { Star } from "lucide-react"; // Importamos el icono de estrella
+import Carousel from "../components/Caraousel";
 
 function HomePage() {
-    return (
-        <div>
+  return (
+    <div className="flex flex-col items-center justify-center space-y-4">
+      <Carousel />
 
-            <Carousel />
-            <p> Nuestro Objetivo: Cambiar tu futuro</p>
-            <p className='text-3xl text-center'> El centro de formacion con mas de 20 años de experiencia.</p>
-            <p> Profesores Altamente Cualificados</p>
-            <p> Escuela Especializada: Mas de 20 años de experiencia en el sector de la belleza y estetica para que hagas realidad tu carrera profesional</p>
-            <p> Ubicacion: Nuestras Clases Presenciales se realizan en Madrid (Paseo Santa Maria De La Cabeza, 10)</p>
-            <p> Atencion y Seguimiento</p>
+      <div className="text-center mt-2">
+        <h1 className="text-3xl md:text-6xl font-extrabold">
+          Centro de Formacion
+        </h1>
+        <h2 className="text-lg md:text-3xl font-bold underline decoration-blue-300 transition-all duration-500">
+          con más de 20 años de experiencia
+        </h2>
+      </div>
+      <div className="d-divider w-1/4 mx-auto"></div>
+      <p className="text-center mx-10 lg:mx-40">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, harum omnis. Facilis explicabo commodi sapiente ducimus laboriosam, culpa quas incidunt reiciendis provident, iste repellat ea expedita libero rem illum repellendus.
+      </p>
 
-            <div className="d-stats d-stats-vertical lg:d-stats-horizontal shadow">
-                <div className="d-stat">
-                    <div className="d-stat-title">Downloads</div>
-                    <div className="d-stat-value">31K</div>
-                    <div className="d-stat-desc">Jan 1st - Feb 1st</div>
-                </div>
+      {/* Bloque nuevo */}
+      <div className="bg-blue-400 text-white w-full py-12 mt-12">
+        <h3 className="text-3xl font-extrabold mb-4 text-center">
+          Líder en enseñanza de estetica y cuidado personal
+        </h3>
 
-                <div className="d-stat">
-                    <div className="d-stat-title">New Users</div>
-                    <div className="d-stat-value">4,200</div>
-                    <div className="d-stat-desc">↗︎ 400 (22%)</div>
-                </div>
-
-                <div className="d-stat">
-                    <div className="d-stat-title">New Registers</div>
-                    <div className="d-stat-value">1,200</div>
-                    <div className="d-stat-desc">↘︎ 90 (14%)</div>
-                </div>
+        <div className="flex flex-wrap justify-center gap-8">
+          {/* Item 1 */}
+          <div className="relative flex flex-col items-center justify-center border-2 rounded-full shadow-lg w-28 h-28 p-4">
+            <p className="text-2xl font-bold">12,432</p>
+            <div className="border-b border-gray-300 w-full my-2"></div>{" "}
+            {/* Línea divisora */}
+            <p className="text-xs">Estudiantes</p>
+            {/* Distintivo de perfección (estrella) */}
+            <div className="absolute top-0 right-0 mr-2 mt-2 text-yellow-400">
+              <Star size={20} fill="#FFC300" />
             </div>
+          </div>
+
+          {/* Item 2 */}
+          <div className="flex flex-col items-center justify-center border-2 rounded-full shadow-lg w-28 h-28 p-4">
+            <p className="text-xl font-bold">120.000</p>
+            <div className="border-b border-gray-300 w-full my-2"></div>{" "}
+            {/* Línea divisora */}
+            <p className="text-xs">Visitas</p>
+          </div>
+
+          {/* Item 3 */}
+          <div className="relative flex flex-col items-center justify-center border-2 rounded-full shadow-lg w-28 h-28 p-4">
+            <p className="text-2xl font-bold">32</p>
+            <div className="border-b border-gray-300 w-full my-2"></div>{" "}
+            {/* Línea divisora */}
+            <p className="text-xs text-center">Cursos impartidos</p>
+          </div>
+
+          {/* Item 4 */}
+          <div className="flex flex-col items-center justify-center border-2 rounded-full shadow-lg w-28 h-28 p-4">
+            <p className="text-2xl font-bold">4.8</p>
+            <div className="border-b border-gray-300 w-full my-2"></div>{" "}
+            {/* Línea divisora */}
+            <p className="text-xs text-center">Valoracion en google</p>{" "}
+            {/* Distintivo de perfección (estrella) */}
+            <div className="absolute top-0 right-0 mr-2 mt-2 text-yellow-400">
+              <Star size={20} fill="#FFC300" />
+            </div>
+          </div>
+
+          {/* Item 5 */}
+          <div className="flex flex-col items-center justify-center border-2 rounded-full shadow-lg w-28 h-28 p-4">
+            <p className="text-2xl font-bold">25,000</p>
+            <div className="border-b border-gray-300 w-full my-2"></div>{" "}
+            {/* Línea divisora */}
+            <p className="text-xs">Practicantes</p>
+          </div>
         </div>
-    )
+      </div>
+
+      {/* Bloque de certificaciones */}
+      <div className="w-full py-12 mt-12">
+        <h3 className="text-3xl font-extrabold mb-8 text-center">
+          Certificaciones y Asociaciones
+        </h3>
+
+        {/* Grid de certificaciones */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mx-auto max-w-6xl px-6">
+          {/* Certificación 1 */}
+          <div className="flex flex-col items-center justify-center border-2 rounded-lg shadow-lg p-4">
+            <img
+              src="/path-to-your-logo/ITEC-logo.png"
+              alt="ITEC"
+              className="w-24 h-24 object-contain mb-4"
+            />
+            <p className="text-center font-semibold">ITEC</p>
+            <p className="text-sm text-center">
+              Certificación internacional en estética y bienestar.
+            </p>
+          </div>
+
+          {/* Certificación 2 */}
+          <div className="flex flex-col items-center justify-center border-2 rounded-lg shadow-lg p-4">
+            <img
+              src="/path-to-your-logo/OMAT-logo.png"
+              alt="OMAT"
+              className="w-24 h-24 object-contain mb-4"
+            />
+            <p className="text-center font-semibold">OMAT</p>
+            <p className="text-sm text-center">
+              Acreditación oficial en técnicas de masaje y bienestar.
+            </p>
+          </div>
+
+          {/* Certificación 3 */}
+          <div className="flex flex-col items-center justify-center border-2 rounded-lg shadow-lg p-4">
+            <img
+              src="/path-to-your-logo/SEPE-logo.png"
+              alt="SEPE"
+              className="w-24 h-24 object-contain mb-4"
+            />
+            <p className="text-center font-semibold">SEPE</p>
+            <p className="text-sm text-center">
+              Reconocimiento oficial como agencia de colocación.
+            </p>
+          </div>
+
+          {/* Certificación 4 */}
+          <div className="flex flex-col items-center justify-center border-2 rounded-lg shadow-lg p-4">
+            <img
+              src="/path-to-your-logo/ISO9001-logo.png"
+              alt="ISO 9001"
+              className="w-24 h-24 object-contain mb-4"
+            />
+            <p className="text-center font-semibold">ISO 9001</p>
+            <p className="text-sm text-center">
+              Certificación en sistemas de gestión de calidad.
+            </p>
+          </div>
+
+          {/* Certificación 5 */}
+          <div className="flex flex-col items-center justify-center border-2 rounded-lg shadow-lg p-4">
+            <img
+              src="/path-to-your-logo/LOGO.png"
+              alt="Logo"
+              className="w-24 h-24 object-contain mb-4"
+            />
+            <p className="text-center font-semibold">Certificado XYZ</p>
+            <p className="text-sm text-center">
+              Acreditación adicional en formación profesional.
+            </p>
+          </div>
+
+          {/* Certificación 6 */}
+          <div className="flex flex-col items-center justify-center border-2 rounded-lg shadow-lg p-4">
+            <img
+              src="/path-to-your-logo/LOGO.png"
+              alt="Logo"
+              className="w-24 h-24 object-contain mb-4"
+            />
+            <p className="text-center font-semibold">Certificado ABC</p>
+            <p className="text-sm text-center">
+              Certificación en educación y desarrollo profesional.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  );
 }
 
-export default HomePage
+export default HomePage;

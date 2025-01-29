@@ -1,5 +1,5 @@
 import { Phone, MapPin } from "lucide-react";
-import logo from '../assets/logo-esmera.png'; // Asegúrate de poner la ruta correcta de tu imagen
+import logo from "../assets/logo-esmera.png"; // Asegúrate de poner la ruta correcta de tu imagen
 
 function Footer() {
   return (
@@ -13,8 +13,12 @@ function Footer() {
             <a className="d-link d-link-hover text-center">Opiniones</a>
             <a className="d-link d-link-hover text-center">Contacto</a>
             <a className="d-link d-link-hover text-center">Noticias</a>
-            <a className="d-link d-link-hover text-center">Arraigo para la formación</a>
-            <a className="d-link d-link-hover text-center">Estancia por estudios</a>
+            <a className="d-link d-link-hover text-center">
+              Arraigo para la formación
+            </a>
+            <a className="d-link d-link-hover text-center">
+              Estancia por estudios
+            </a>
           </div>
         </nav>
 
@@ -31,9 +35,8 @@ function Footer() {
           </p>
         </aside>
 
-
         <div className="flex flex-col items-center space-y-3 mt-4 lg:items-start">
-          <div className="border rounded-lg p-2">
+          <div className="border rounded-4xl p-2">
             <a
               href="tel:+1234567890"
               className="d-btn d-btn-ghost flex items-center space-x-2"

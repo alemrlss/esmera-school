@@ -4,7 +4,7 @@ import Logo from "../assets/logo-navbar.png"; // Asegúrate de que la ruta esté
 
 function Navbar() {
   return (
-    <div className="d-navbar bg-base-100 shadow-2xl">
+    <div className="d-navbar bg-base-100 shadow-5xl z-20 border-b --">
       <div className="d-navbar-start">
         <div className="d-dropdown">
           <div tabIndex={0} role="button" className=" lg:hidden">
@@ -141,7 +141,7 @@ function Navbar() {
       </div>
 
       <div className="d-navbar-end hidden lg:flex">
-        <div className="border rounded-lg mr-4">
+        <div className="border rounded-3xl mr-4">
           <a
             href="tel:+1234567890"
             className="d-btn d-btn-ghost flex items-center"
