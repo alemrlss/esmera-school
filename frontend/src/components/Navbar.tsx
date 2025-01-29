@@ -1,32 +1,13 @@
 import { Phone } from "lucide-react";
-import { useEffect, useState } from "react";
 import { ThemeToggleButton } from "../contexts/ThemeContext";
+import Logo from "../assets/logo-navbar.png"; // Asegúrate de que la ruta esté correcta
 
 function Navbar() {
-  const [theme, setTheme] = useState("light");
-  const handleToggle = (e: any) => {
-    if (e.target.checked) {
-      setTheme("light");
-    } else {
-      setTheme("night");
-    }
-  };
-  // initially set the theme and "listen" for changes to apply them to the HTML tag
-  useEffect(() => {
-    localStorage.setItem("theme", theme!);
-    const localTheme = localStorage.getItem("theme");
-    document.querySelector("html")?.setAttribute("data-theme", localTheme!);
-  }, [theme]);
-
   return (
     <div className="d-navbar bg-base-100 shadow-2xl">
       <div className="d-navbar-start">
         <div className="d-dropdown">
-          <div
-            tabIndex={0}
-            role="button"
-            className="d-btn d-btn-ghost lg:hidden"
-          >
+          <div tabIndex={0} role="button" className=" lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -98,8 +79,12 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <a className="d-btn d-btn-ghost text-xl ">EsmeraSchool</a>
+        {/* Reemplazamos el SVG por la imagen del logo */}
+        <a className="ml-2 lg:ml-6">
+          <img src={Logo} alt="Esmera School" className="w-32" />
+        </a>
       </div>
+
       <div className="d-navbar-center hidden lg:flex">
         <ul className="d-menu d-menu-horizontal px-1">
           <li>
@@ -165,6 +150,12 @@ function Navbar() {
             +1 (234) 567-890
           </a>
         </div>
+        <div className="lg:ml-6">
+          <ThemeToggleButton />
+        </div>
+      </div>
+
+      <div className="d-navbar-end flex lg:hidden">
         <div>
           <ThemeToggleButton />
         </div>

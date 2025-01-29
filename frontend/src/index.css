@@ -4,3 +4,7 @@
   prefix: "d-";
   themes: light --default, dark --prefersdark;
 }
+
+@theme {
+  --font-monserrat: "Montserrat"; 
+}

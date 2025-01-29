@@ -8,7 +8,9 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           {/* Rutas hijas */}
-          <Route index element={<div >Home Page</div>} />
+          <Route index element={<div >
+            <p className='h-screen'>Home PageHome PageHome PageHome PageHome PageHome PageHome Page</p>
+          </div>} />
           <Route path="cursos" element={<div>Cursos Page</div>} />
           <Route path="conoce-esmera" element={<div>Conoce Esmera Page</div>} />
           <Route path="contacto" element={<div>Contacto</div>} />
