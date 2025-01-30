@@ -2,23 +2,23 @@ import React, { useState, useEffect } from "react";
 
 function Carousel() {
 
-    //Las imagenes deben ser 1200 x 400 
+  //Las imagenes deben ser 1200 x 400 
   const slides = [
     {
       id: "slide1",
-      image: "https://i.postimg.cc/6qvDGmzH/Dise-o-sin-t-tulo-8.png",
+      image: "https://i.postimg.cc/jS9GL4Q3/Dise-o-sin-t-tulo-2.png",
     },
     {
       id: "slide2",
-      image: "https://i.postimg.cc/Kvt6GC1j/Dise-o-sin-t-tulo-9.png",
+      image: "https://i.postimg.cc/jS9GL4Q3/Dise-o-sin-t-tulo-2.png",
     },
     {
       id: "slide",
-      image: "https://i.postimg.cc/6qvDGmzH/Dise-o-sin-t-tulo-8.png",
+      image: "https://i.postimg.cc/jS9GL4Q3/Dise-o-sin-t-tulo-2.png",
     },
     {
       id: "slide4",
-      image: "https://i.postimg.cc/Kvt6GC1j/Dise-o-sin-t-tulo-9.png",
+      image: "https://i.postimg.cc/jS9GL4Q3/Dise-o-sin-t-tulo-2.png",
     }
   ];
 

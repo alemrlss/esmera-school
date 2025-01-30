@@ -1,4 +1,4 @@
-import { Star } from "lucide-react"; // Importamos el icono de estrella
+import { Mail, MessageCircle, Phone, Star, User } from "lucide-react"; // Importamos el icono de estrella
 import Carousel from "../components/Caraousel";
 
 function HomePage() {
@@ -8,12 +8,13 @@ function HomePage() {
 
       <div className="text-center mt-2">
         <h1 className="text-3xl md:text-6xl font-extrabold">
-          Centro de Formacion
+          Centro de Formación
         </h1>
-        <h2 className="text-lg md:text-3xl font-bold underline decoration-blue-300 transition-all duration-500">
+        <h2 className="text-lg md:text-3xl font-bold relative inline-block">
           con más de 20 años de experiencia
         </h2>
       </div>
+
       <div className="d-divider w-1/4 mx-auto"></div>
       <p className="text-center mx-10 lg:mx-40">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, harum omnis. Facilis explicabo commodi sapiente ducimus laboriosam, culpa quas incidunt reiciendis provident, iste repellat ea expedita libero rem illum repellendus.
@@ -162,8 +163,102 @@ function HomePage() {
             </p>
           </div>
         </div>
+        <div className="w-full mt-12">
+          <h3 className="text-3xl font-extrabold mb-8 text-center">
+            Contáctanos
+          </h3>
+          <div className="w-full mt-12">
+            <h3 className="text-4xl font-extrabold mb-8 text-center">
+              Contáctanos
+            </h3>
+            <div className="max-w-4xl mx-auto px-6">
+              <form className="shadow-md bg-base-100 rounded-lg p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {/* Campo Nombre */}
+                  <div className="d-form-control relative">
+                    <label className="d-label">
+                      <span className="d-label-text">Nombre Completo</span>
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        placeholder="Ingrese su nombre"
+                        className="d-input d-input-bordered w-full pl-10"
+                      />
+                      <User className="absolute top-2.5 left-3 text-gray-500" />
+                    </div>
+                  </div>
+
+                  {/* Campo Correo */}
+                  <div className="d-form-control relative">
+                    <label className="d-label">
+                      <span className="d-label-text">Correo Electrónico</span>
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="email"
+                        placeholder="Ingrese su correo"
+                        className="d-input d-input-bordered w-full pl-10"
+                      />
+                      <Mail className="absolute top-2.5 left-3 text-gray-500" />
+                    </div>
+                  </div>
+
+                  {/* Campo Teléfono */}
+                  <div className="d-form-control relative">
+                    <label className="d-label">
+                      <span className="d-label-text">Teléfono</span>
+                    </label>
+                    <div className="relative">
+                      <input
+                        type="tel"
+                        placeholder="Ingrese su número de teléfono"
+                        className="d-input d-input-bordered w-full pl-10"
+                      />
+                      <Phone className="absolute top-2.5 left-3 text-gray-500" />
+                    </div>
+                  </div>
+
+                  {/* Campo Motivo de Contacto */}
+                  <div className="d-form-control">
+                    <label className="d-label">
+                      <span className="d-label-text">Motivo de Contacto</span>
+                    </label>
+                    <select className="d-select d-select-bordered w-full">
+                      <option>Consultas sobre Cursos</option>
+                      <option>Soporte Técnico</option>
+                      <option>Información sobre Certificaciones</option>
+                      <option>Otros</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Campo Mensaje */}
+                <div className="d-form-control mt-4">
+                  <label className="d-label">
+                    <span className="d-label-text">Mensaje</span>
+                  </label>
+                  <div className="relative">
+                    <textarea
+                      className="d-textarea d-textarea-bordered w-full pl-10"
+                      placeholder="Escriba su mensaje aquí..."
+                    ></textarea>
+                    <MessageCircle className="absolute top-3 left-3 text-gray-500" />
+                  </div>
+                </div>
+
+                {/* Botón de Enviar */}
+                <div className="text-center mt-6">
+                  <button className="d-btn d-btn-primary w-full md:w-1/2 d-btn-lg hover:scale-105 transition-transform">
+                    Enviar Mensaje
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-      
+
     </div>
   );
 }

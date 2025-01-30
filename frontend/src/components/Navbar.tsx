@@ -1,10 +1,11 @@
 import { Phone } from "lucide-react";
 import { ThemeToggleButton } from "../contexts/ThemeContext";
-import Logo from "../assets/logo-navbar.png"; // Asegúrate de que la ruta esté correcta
+import Logo from "../assets/logo-navbar.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="d-navbar bg-base-100 shadow-5xl z-20 border-b --">
+    <div className="d-navbar bg-base-100 shadow-5xl z-20 border-b">
       <div className="d-navbar-start">
         <div className="d-dropdown">
           <div tabIndex={0} role="button" className=" lg:hidden">
@@ -28,111 +29,111 @@ function Navbar() {
             className="d-menu d-menu-sm d-dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>Inicio</a>
+              <Link to="/">Inicio</Link>
             </li>
             <li tabIndex={0}>
               <details>
                 <summary>Cursos</summary>
                 <ul className="p-2">
                   <li>
-                    <a>Barbería</a>
+                    <Link to="/cursos/barberia">Barbería</Link>
                   </li>
                   <li>
-                    <a>Estética</a>
+                    <Link to="/cursos/estetica">Estética</Link>
                   </li>
                   <li>
-                    <a>Uñas</a>
+                    <Link to="/cursos/unas">Uñas</Link>
                   </li>
                   <li>
-                    <a>Peluquería</a>
+                    <Link to="/cursos/peluqueria">Peluquería</Link>
                   </li>
                   <li>
-                    <a>Maquillaje</a>
+                    <Link to="/cursos/maquillaje">Maquillaje</Link>
                   </li>
                 </ul>
               </details>
             </li>
             <li>
-              <a>Conoce Esmera</a>
+              <Link to="/conoce-esmera">Conoce Esmera</Link>
             </li>
             <li>
-              <a>Contacto</a>
+              <Link to="/contacto">Contacto</Link>
             </li>
             <li>
-              <a>Noticias</a>
+              <Link to="/noticias">Noticias</Link>
             </li>
             <li tabIndex={0}>
               <details>
                 <summary>Legal</summary>
                 <ul className="p-2">
                   <li>
-                    <a>Arraigo para la Formación</a>
+                    <Link to="/legal/arraigo">Arraigo para la Formación</Link>
                   </li>
                   <li>
-                    <a>Estancia por Estudios</a>
+                    <Link to="/legal/estancia">Estancia por Estudios</Link>
                   </li>
                   <li>
-                    <a>Visas</a>
+                    <Link to="/legal/visas">Visas</Link>
                   </li>
                 </ul>
               </details>
             </li>
           </ul>
         </div>
-        {/* Reemplazamos el SVG por la imagen del logo */}
-        <a className="ml-2 lg:ml-6">
+
+        <Link to="/" className="ml-4 lg:ml-6">
           <img src={Logo} alt="Esmera School" className="w-32" />
-        </a>
+        </Link>
       </div>
 
       <div className="d-navbar-center hidden lg:flex">
         <ul className="d-menu d-menu-horizontal px-1">
           <li>
-            <a>Inicio</a>
+            <Link to="/">Inicio</Link>
           </li>
           <li tabIndex={0}>
             <details>
               <summary>Cursos</summary>
               <ul className="p-2">
                 <li>
-                  <a>Barbería</a>
+                  <Link to="/cursos/barberia">Barbería</Link>
                 </li>
                 <li>
-                  <a>Estética</a>
+                  <Link to="/cursos/estetica">Estética</Link>
                 </li>
                 <li>
-                  <a>Uñas</a>
+                  <Link to="/cursos/unas">Uñas</Link>
                 </li>
                 <li>
-                  <a>Peluquería</a>
+                  <Link to="/cursos/peluqueria">Peluquería</Link>
                 </li>
                 <li>
-                  <a>Maquillaje</a>
+                  <Link to="/cursos/maquillaje">Maquillaje</Link>
                 </li>
               </ul>
             </details>
           </li>
           <li>
-            <a>Conoce Esmera</a>
+            <Link to="/conoce-esmera">Conoce Esmera</Link>
           </li>
           <li>
-            <a>Contacto</a>
+            <Link to="/contacto">Contacto</Link>
           </li>
           <li>
-            <a>Noticias</a>
+            <Link to="/noticias">Noticias</Link>
           </li>
           <li tabIndex={0}>
             <details>
               <summary>Legal</summary>
               <ul className="p-2">
                 <li>
-                  <a>Arraigo para la Formación</a>
+                  <Link to="/noticias">Arraigo para la Formación</Link>
                 </li>
                 <li>
-                  <a>Estancia por Estudios</a>
+                  <Link to="/legal/estancia">Estancia por Estudios</Link>
                 </li>
                 <li>
-                  <a>Visas</a>
+                  <Link to="/legal/visas">Visas</Link>
                 </li>
               </ul>
             </details>
@@ -142,10 +143,7 @@ function Navbar() {
 
       <div className="d-navbar-end hidden lg:flex">
         <div className="border rounded-3xl mr-4">
-          <a
-            href="tel:+1234567890"
-            className="d-btn d-btn-ghost flex items-center"
-          >
+          <a href="tel:+1234567890" className="d-btn d-btn-ghost flex items-center">
             <Phone className="h-5 w-5" />
             +1 (234) 567-890
           </a>
@@ -159,20 +157,6 @@ function Navbar() {
         <div>
           <ThemeToggleButton />
         </div>
-      </div>
-
-      <div className="d-dock bg-neutral text-neutral-content lg:hidden">
-        <button>
-          <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="currentColor" strokeLinejoin="miter" strokeLinecap="butt"><polyline points="1 11 12 2 23 11" fill="none" stroke="currentColor" stroke-miterlimit="10" strokeWidth="2"></polyline><path d="m5,13v7c0,1.105.895,2,2,2h10c1.105,0,2-.895,2-2v-7" fill="none" stroke="currentColor" strokeLinecap="square" stroke-miterlimit="10" strokeWidth="2"></path><line x1="12" y1="22" x2="12" y2="18" fill="none" stroke="currentColor" strokeLinecap="square" stroke-miterlimit="10" strokeWidth="2"></line></g></svg>
-          <span className="d-dock-label">Informate</span>
-        </button>
-
-
-
-        <button>
-          <svg className="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="currentColor" strokeLinejoin="miter" strokeLinecap="butt"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeLinecap="square" stroke-miterlimit="10" strokeWidth="2"></circle><path d="m22,13.25v-2.5l-2.318-.966c-.167-.581-.395-1.135-.682-1.654l.954-2.318-1.768-1.768-2.318.954c-.518-.287-1.073-.515-1.654-.682l-.966-2.318h-2.5l-.966,2.318c-.581.167-1.135.395-1.654.682l-2.318-.954-1.768,1.768.954,2.318c-.287.518-.515,1.073-.682,1.654l-2.318.966v2.5l2.318.966c.167.581.395,1.135.682,1.654l-.954,2.318,1.768,1.768,2.318-.954c.518.287,1.073.515,1.654.682l.966,2.318h2.5l.966-2.318c.581-.167,1.135-.395,1.654-.682l2.318.954,1.768-1.768-.954-2.318c.287-.518.515-1.073.682-1.654l2.318-.966Z" fill="none" stroke="currentColor" strokeLinecap="square" stroke-miterlimit="10" strokeWidth="2"></path></g></svg>
-          <span className="d-dock-label">Llamanos</span>
-        </button>
       </div>
     </div>
   );
