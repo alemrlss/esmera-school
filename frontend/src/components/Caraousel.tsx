@@ -6,15 +6,15 @@ function Carousel() {
   const slides = [
     {
       id: "slide1",
-      image: "https://i.postimg.cc/jS9GL4Q3/Dise-o-sin-t-tulo-2.png",
+      image: "https://i.postimg.cc/LXCCm3mv/Dise-o-sin-t-tulo-11.png",
     },
     {
       id: "slide2",
       image: "https://i.postimg.cc/jS9GL4Q3/Dise-o-sin-t-tulo-2.png",
     },
     {
-      id: "slide",
-      image: "https://i.postimg.cc/jS9GL4Q3/Dise-o-sin-t-tulo-2.png",
+      id: "slide3",
+      image: "https://i.postimg.cc/LXCCm3mv/Dise-o-sin-t-tulo-11.png",
     },
     {
       id: "slide4",

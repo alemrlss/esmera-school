@@ -1,4 +1,5 @@
 import { Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom"; // Importamos Link desde react-router-dom
 import logo from "../assets/logo-esmera.png"; // Asegúrate de poner la ruta correcta de tu imagen
 
 function Footer() {
@@ -9,16 +10,31 @@ function Footer() {
         <nav className="mt-6 w-full">
           <h6 className="d-footer-title text-center lg:text-left">Navega</h6>
           <div className="grid grid-cols-4 md:flex justify-center lg:justify-start gap-4 mt-2">
-            <a className="d-link d-link-hover text-center">Conoce Esmera</a>
-            <a className="d-link d-link-hover text-center">Opiniones</a>
-            <a className="d-link d-link-hover text-center">Contacto</a>
-            <a className="d-link d-link-hover text-center">Noticias</a>
-            <a className="d-link d-link-hover text-center">
+            {/* Reemplazamos los enlaces por el componente Link */}
+            <Link to="/" className="d-link d-link-hover text-center">
+              Conoce Esmera
+            </Link>
+            <Link to="/opiniones" className="d-link d-link-hover text-center">
+              Opiniones
+            </Link>
+            <Link to="/contacto" className="d-link d-link-hover text-center">
+              Contacto
+            </Link>
+            <Link to="/noticias" className="d-link d-link-hover text-center">
+              Noticias
+            </Link>
+            <Link
+              to="/arraigo-formacion"
+              className="d-link d-link-hover text-center"
+            >
               Arraigo para la formación
-            </a>
-            <a className="d-link d-link-hover text-center">
+            </Link>
+            <Link
+              to="/estancia-estudios"
+              className="d-link d-link-hover text-center"
+            >
               Estancia por estudios
-            </a>
+            </Link>
           </div>
         </nav>
 
@@ -36,18 +52,18 @@ function Footer() {
         </aside>
 
         <div className="flex flex-col items-center space-y-3 mt-4 lg:items-start">
-          <div className="border rounded-4xl p-2">
+          <div className="border rounded-3xl mr-4 transition duration-300 ease-in-out transform hover:scale-105 hover:border-[#0057a8]">
             <a
-              href="tel:+1234567890"
-              className="d-btn d-btn-ghost flex items-center space-x-2"
+              href="tel:912795975"
+              className="d-btn d-btn-ghost flex items-center px-6 py-2 rounded-full font-medium hover:bg-[#0057a8] hover:text-white transition duration-300 ease-in-out"
             >
-              <Phone className="h-5 w-5" />
-              <span>+1 (234) 567-890</span>
+              <Phone className="h-5 w-5 mr-2" />
+              912 79 59 75
             </a>
           </div>
 
           <a
-            href="https://www.google.com/maps?q=Paseo+Santa+Maria+de+la+Cabeza,+Madrid"
+            href="https://maps.app.goo.gl/F9AZnT2whTAU4wx46"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center space-x-2 text-gray-500 font-bold hover:underline lg:hidden"
@@ -58,19 +74,19 @@ function Footer() {
         </div>
       </div>
       {/* Mapa embebido visible solo en desktop */}
-      <div className="hidden lg:block lg:ml-4 lg:w-1/3 lg:max-w-sm lg:flex lg:flex lg:flex-col items-center space-y-1">
+      <div className="hidden  lg:ml-4 lg:w-1/3 lg:max-w-sm lg:flex lg:flex-col items-center space-y-1">
         <a
-          href="https://www.google.com/maps?q=Paseo+Santa+Maria+de+la+Cabeza,+Madrid"
+          href="https://maps.app.goo.gl/F9AZnT2whTAU4wx46"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center text-center space-x-2 text-gray-500 font-bold hover:underline"
         >
-          <MapPin className="h-6 w-6 text-red-400" />
+          <MapPin className="h-6 w-6" />
           <span>Visítanos en Paseo Santa Maria de la Cabeza, 10</span>
         </a>
         <iframe
           title="Ubicación Esmera School"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345096765!2d144.95373531531596!3d-37.81627937975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f7bdf1d1%3A0x5045675218ce6e0!2sPaseo+de+Santa+Mar%C3%ADa+de+la+Cabeza%2C+Madrid!5e0!3m2!1ses!2ses!4v1645534345752"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.1020160738226!2d-3.6970794235728133!3d40.40659075625579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4227f73858ca7b%3A0x3c679552e73a4d02!2sEsmera School!5e0!3m2!1ses-419!2ses!4v1738410585067!5m2!1ses-419!2ses"
           width="100%"
           height="250"
           style={{ border: 0 }}
@@ -81,8 +97,7 @@ function Footer() {
       <div className="block lg:hidden lg:ml-4 lg:w-1/3 lg:max-w-sm">
         <iframe
           title="Ubicación Esmera School"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345096765!2d144.95373531531596!3d-37.81627937975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f7bdf1d1%3A0x5045675218ce6e0!2sCalle+Ficticia+123!5e0!3m2!1ses!2sco!4v1645534345752"
-          width="100%"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.1020160738226!2d-3.6970794235728133!3d40.40659075625579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4227f73858ca7b%3A0x3c679552e73a4d02!2sEsmera School!5e0!3m2!1ses-419!2ses!4v1738410585067!5m2!1ses-419!2ses"          width="100%"
           height="200"
           style={{ border: 0 }}
           allowFullScreen={true}
