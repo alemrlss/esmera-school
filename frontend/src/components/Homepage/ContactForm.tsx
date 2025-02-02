@@ -4,7 +4,7 @@ function ContactForm() {
   return (
     <div
       className="w-full pt-32 pb-5 bg-[#0057a8]"
-      style={{ clipPath: "polygon(0 20%, 100% 0, 100% 100%, 0 100%)" }}
+      style={{ clipPath: "polygon(0 20%, 100% 0, 100% 100%, 0 100%)", }}
     >
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
         <div className="w-full md:w-1/2 p-8 bg-white rounded-xl shadow-lg mb-0 md:mb-0">

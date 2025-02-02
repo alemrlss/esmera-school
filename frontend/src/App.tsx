@@ -3,6 +3,7 @@ import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
 import NoticesPage from "./pages/NoticesPage";
+import ConoceEsmeraPage from "./pages/ConoceEsmeraPage";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
           {/* Rutas hijas */}
           <Route index element={<HomePage />} />
           <Route path="cursos" element={<div>Cursos Page</div>} />
-          <Route path="conoce-esmera" element={<div>Conoce Esmera Page</div>} />
+          <Route path="conoce-esmera" element={<ConoceEsmeraPage/>} />
           <Route path="contacto" element={<ContactPage />} />
           <Route path="noticias" element={<NoticesPage />} />
           <Route path="legal" element={<div>Legal Page</div>} />
