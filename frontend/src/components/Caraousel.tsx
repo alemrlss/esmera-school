@@ -35,9 +35,9 @@ function Carousel() {
   }, [slides.length, currentIndex]);
 
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center w-full mx-auto">
+    <div className="flex flex-col md:flex-row justify-between items-center w-full mx-auto mb-0">
       {/* Carrusel debajo (en móviles) o a la derecha (en escritorio) */}
-      <div className="relative w-full md:w-full overflow-hidden h-auto md:h-80">
+      <div className="relative w-full md:w-full overflow-hidden h-auto md:h-96">
         <div
           className="flex transition-transform ease-in-out duration-700"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}

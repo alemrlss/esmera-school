@@ -1,6 +1,6 @@
-import React from "react";
 import { Phone } from "lucide-react";
 import headerImage from "../assets/banner-trasparent.png";
+import { motion } from "framer-motion";
 
 function ConoceEsmeraPage() {
   return (
@@ -11,44 +11,90 @@ function ConoceEsmeraPage() {
         content="Conoce Esmera, un centro de formación con más de 20 años de experiencia en el mundo del cuidado personal. Prepara tu futuro profesional hoy."
       />
 
-      {/* Hero Section */}
-      <div className="w-full relative">
+      <motion.div
+        className="w-full relative"
+        initial={{ opacity: 0, y: 0 }} // Comienza con opacidad 0 y desplazamiento hacia abajo
+        animate={{ opacity: 1, y: 0 }} // Finaliza con opacidad 1 y sin desplazamiento
+        transition={{ duration: 1, ease: "easeOut" }} // Duración de la animación y tipo de transición
+      >
         <img
           src={headerImage}
           alt="Centro de formación Esmera, especializado en el cuidado personal"
           className="w-full h-[250px] sm:h-[350px] md:h-[400px] object-cover"
         />
         <div className="absolute top-0 left-0 w-full h-full text-white flex flex-col items-center justify-center px-4 sm:px-8 md:px-16">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold">
+          <motion.h1
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.3 }} // Retraso de 0.3s para que se vea la animación en cadena
+          >
             CONOCE ESMERA
-          </h1>
-          <p className="mt-2 text-sm sm:text-lg md:text-xl mx-4 sm:mx-16 md:mx-72">
+          </motion.h1>
+          <motion.p
+            className="mt-2 text-sm sm:text-lg md:text-xl mx-4 sm:mx-16 md:mx-72"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+          >
             Centro de formación con más de 20 años de experiencia, te preparamos
             para ser un profesional destacado en el mundo del cuidado personal.
-          </p>
-          <p className="mt-2 text-base sm:text-xl font-semibold">
+          </motion.p>
+          <motion.p
+            className="mt-2 text-base sm:text-xl font-semibold"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.7 }}
+          >
             "Por un futuro sin límites. amistad, liderazgo y servicio"
-          </p>
-          <button
+          </motion.p>
+
+          {/* Sincronización del botón con el texto */}
+          <motion.button
             className="d-btn d-btn-primary mt-6 px-8 py-2 text-lg bg-[#008e47] border-2 border-[#008e47] hover:bg-transparent hover:text-[#008e47] hover:border-[#008e47] transition-all duration-300 shadow-lg rounded-4xl"
             aria-label="Contactar con Esmera"
+            initial={{ opacity: 0, y: 0 }}
+            animate={{ opacity: 1, y: 1 }}
+            transition={{ duration: 1, ease: "backIn", delay: 0.9 }} // Sincronizado con el texto
           >
             Contáctanos
-          </button>
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
 
       {/* Nuestro Objetivo */}
       <section className="py-8 px-8">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
+        <motion.h2
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-center"
+          initial={{ opacity: 0, y: 20 }} // Inicia con opacidad 0 y desplazado hacia abajo
+          animate={{ opacity: 1, y: 0 }} // Finaliza con opacidad 1 y sin desplazamiento
+          transition={{ duration: 1, ease: "easeOut" }} // Duración de la animación
+        >
           NUESTRO OBJETIVO:
-        </h2>
-        <p className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8">
-          Garantizar tu futuro
-        </p>
-        <div className="d-divider w-1/4 mx-auto "></div>
+        </motion.h2>
 
-        <p className="text-center text-sm sm:text-lg mx-auto lg:mx-40 mt-8">
+        <motion.p
+          className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }} // Retraso de 0.3s
+        >
+          Garantizar tu futuro
+        </motion.p>
+
+        <motion.div
+          className="d-divider w-1/4 mx-auto"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.6 }} // Retraso de 0.6s para que se vea después del texto
+        ></motion.div>
+
+        <motion.p
+          className="text-center text-sm sm:text-lg mx-auto lg:mx-40 mt-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: "easeOut", delay: 0.9 }} // Retraso de 0.9s para el texto
+        >
           En Esmera, nos comprometemos a ofrecer una educación de calidad que no
           solo te prepare para enfrentar los retos del mundo del cuidado
           personal, sino que te brinde las herramientas necesarias para
@@ -56,7 +102,7 @@ function ConoceEsmeraPage() {
           experiencia en la formación de líderes en la industria, trabajamos de
           la mano con nuestros estudiantes para asegurar que cada uno de ellos
           adquiera los conocimientos y habilidades que marcan la diferencia.
-        </p>
+        </motion.p>
       </section>
 
       <section
