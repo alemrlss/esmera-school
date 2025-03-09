@@ -27,7 +27,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="d-navbar bg-base-100 shadow-5xl z-20 border-b">
+    <nav className="d-navbar bg-base-100 shadow-5xl z-20">
       <div className="d-navbar-start">
         <div className="d-dropdown">
           <div tabIndex={0} role="button" className="lg:hidden">

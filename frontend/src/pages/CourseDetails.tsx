@@ -1,31 +1,72 @@
 import { useParams } from "react-router-dom";
 import courses from "../data/courses";
 import CourseList from "../components/Courses/CourseList";
+import { useRef } from "react";
 
 const CourseDetails = () => {
-    const { categoria } = useParams();
-    const categoriaData = courses[categoria];
+  const { categoria } = useParams();
+  const categoriaData = courses[categoria];
 
-    if (!categoriaData) {
-        return <h2 className="text-center text-red-500 text-xl">Categoría no encontrada</h2>;
+  // Creamos una referencia para la lista de cursos
+  const courseListRef = useRef<HTMLDivElement | null>(null);
+
+  const handleScrollToCourseList = () => {
+    // Usamos el método scrollIntoView para hacer scroll hacia la lista de cursos
+    if (courseListRef.current) {
+      courseListRef.current.scrollIntoView({
+        behavior: "smooth", // Desplazamiento suave
+        block: "start", // Aseguramos que el elemento se alinee al inicio
+      });
     }
+  };
 
+  if (!categoriaData) {
     return (
-        <div className="container mx-auto p-8">
-            {/* Sección de información general */}
-            <h1 className="text-3xl font-bold mb-4">{categoriaData.titulo}</h1>
-            <p className="text-lg mb-4">{categoriaData.descripcion}</p>
-
-            {/* Carrusel de imágenes */}
-            <div className="flex gap-4 overflow-x-auto mb-6">
-                {categoriaData.imagenes.map((img, index) => (
-                    <img key={index} src={img} alt={`Imagen de ${categoriaData.titulo}`} className="w-1/3 h-40 object-cover rounded-lg shadow-md" />
-                ))}
-            </div>
-            {/* Lista de cursos */}
-            <CourseList categoria={categoria} cursos={categoriaData.cursos} />
+      <div className="flex justify-center items-center h-screen">
+        <div className="d-alert d-alert-error w-96">
+          <span className="text-xl">Categoría no encontrada</span>
         </div>
+      </div>
     );
+  }
+
+  return (
+    <div >
+      {/* Banner con título y descripción */}
+      <div className="relative w-full h-64 md:h-80 lg:h-96 mb-8">
+        <img
+          src={categoriaData.banner}
+          alt={`Banner de ${categoriaData.title}`}
+          className="w-full h-full object-cover "
+        />
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-left p-4 ">
+          <div className="">
+            <h1 className="text-4xl font-bold text-white mb-4">
+              {categoriaData.title}
+            </h1>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: categoriaData.description_html,
+              }}
+            ></p>
+            <button
+              onClick={handleScrollToCourseList} // Llamamos la función cuando se hace clic
+              className={`d-btn d-btn-lg px-6 py-3 border-none text-white rounded-3xl shadow-md hover:shadow-lg transition-all ${categoriaData.btn_color}`}
+            >
+              Ver todos los cursos
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Lista de cursos, ahora con referencia para hacer scroll */}
+      <div
+        ref={courseListRef}
+      >
+        <CourseList categoria={categoria} cursos={categoriaData.cursos} />
+      </div>
+    </div>
+  );
 };
 
 export default CourseDetails;

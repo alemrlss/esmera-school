@@ -1,16 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // Importamos el componente Link de React Router
 
 const CourseCard = ({ categoria, curso }) => {
-    return (
-        <div className="border p-4 shadow-lg rounded-lg">
-            <img src={curso.imagen} alt={curso.nombre} className="w-full h-40 object-cover" />
-            <h3 className="text-lg font-bold mt-2">{curso.nombre}</h3>
-            <p>{curso.descripcion}</p>
-            <p className="text-sm text-gray-600">Duración: {curso.duracion}</p>
-            <Link to={`/cursos/${categoria}/${curso.id}`} className="text-blue-500 mt-2 block">Ver más</Link>
-        </div>
-    );
+  return (
+    <div className="d-card bg-base-100 w-full sm:w-96 shadow-xs rounded-lg overflow-hidden hover:shadow-sm transition-all cursor-pointer">
+      <Link to={`/cursos/${categoria}/${curso.id}`} className="block w-full h-full"> {/* Enlace en toda la tarjeta */}
+        <figure className="relative w-full rounded-bl-3xl rounded-tr-3xl">
+          <img
+            src={curso.imagen}
+            alt={curso.nombre}
+            className="object-cover w-full h-48 sm:h-56 md:h-64 transition-all opacity-80 hover:opacity-90"
+          />
+          <div className="absolute inset-0 bg-black opacity-40 transition-all"></div> {/* Fondo oscuro */}
+          
+          {/* Etiqueta 'Popular' en la esquina superior izquierda */}
+          {curso.isPopular && (
+            <span className="d-badge d-badge-success absolute top-2 left-2 text-sm text-white font-bold">
+              Nuevo
+            </span>
+          )}
+
+          {/* Contenido de la tarjeta */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
+            <h2 className="d-card-title text-xl font-semibold text-white mb-2">
+              {curso.nombre}
+            </h2>
+            <button className="border text-white cursor-pointer border-white w-full md:w-auto rounded-lg px-4 py-2 mt-4">
+              Más información
+            </button>
+          </div>
+        </figure>
+      </Link>
+    </div>
+  );
 };
 
 export default CourseCard;

@@ -1,7 +1,7 @@
 function KeyMetrics() {
     return (
       <div
-        className="bg-[#0057a8] text-white w-full py-24 mt-12"
+        className="bg-[#0057a8] text-white w-full py-24 "
         style={{ clipPath: "polygon(0 0, 100% 0, 100% 80%, 0 100%)" }}
       >
         <h3 className="text-3xl lg:text-5xl font-extrabold mb-4 text-center">
