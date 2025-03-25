@@ -63,7 +63,7 @@ export const ThemeToggleButton: React.FC = () => {
 
       {/* sun icon */}
       <svg
-        class="d-swap-off h-10 w-10 fill-current"
+        className="d-swap-off h-10 w-10 fill-current"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >
@@ -72,7 +72,7 @@ export const ThemeToggleButton: React.FC = () => {
 
       {/* moon icon */}
       <svg
-        class="d-swap-on h-10 w-10 fill-current"
+        className="d-swap-on h-10 w-10 fill-current"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >

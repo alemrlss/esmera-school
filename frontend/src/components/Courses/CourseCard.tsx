@@ -1,6 +1,20 @@
 import { Link } from "react-router-dom"; // Importamos el componente Link de React Router
 
-const CourseCard = ({ categoria, curso }) => {
+// Definimos la interfaz para el objeto "curso"
+interface Curso {
+  id: string;
+  imagen: string;
+  nombre: string;
+  isPopular: boolean;
+}
+
+// Definimos la interfaz para las props del componente
+interface CourseCardProps {
+  categoria: string;
+  curso: Curso;
+}
+
+const CourseCard = ({ categoria, curso }: CourseCardProps) => {
   return (
     <div className="d-card bg-base-100 w-full sm:w-96 shadow-xs rounded-lg overflow-hidden hover:shadow-sm transition-all cursor-pointer">
       <Link to={`/cursos/${categoria}/${curso.id}`} className="block w-full h-full"> {/* Enlace en toda la tarjeta */}

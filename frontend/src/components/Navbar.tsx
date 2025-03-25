@@ -1,7 +1,7 @@
 import { Phone } from "lucide-react";
 import Logo from "../assets/logo-navbar.png";
 import { Link, useLocation } from "react-router-dom"; // Importamos useLocation
-import { useRef } from "react";
+import { RefObject, useRef } from "react";
 
 function Navbar() {
   const location = useLocation(); // Hook para obtener la ruta actual
@@ -9,14 +9,14 @@ function Navbar() {
   const cursosRef = useRef(null);
   const legalRef = useRef(null);
 
-  const closeDetails = (ref) => {
+  const closeDetails = (ref: RefObject<HTMLDetailsElement>): void => {
     if (ref.current) {
-      ref.current.open = false;
+      ref.current.open = false; // Cerrar el <details> estableciendo open a false
     }
   };
 
   // Función que retorna la clase 'selected' si la ruta actual coincide
-  const getNavLinkClass = (path) => {
+  const getNavLinkClass = (path: string) => {
     const baseClass =
       "font-bold hover:text-[#0057a8] hover:scale-105 transform transition duration-300 ease-in-out";
     const activeClass = "text-[#0057a8] underline"; // Clase para el subrayado

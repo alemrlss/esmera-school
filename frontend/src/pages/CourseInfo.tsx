@@ -32,17 +32,16 @@ const CursoInfo = () => {
     correo: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: value, // Actualizamos el estado con el nuevo valor
     });
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Formulario enviado:", formData);
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+    e.preventDefault(); // Prevenir el comportamiento predeterminado del formulario (recarga de página)
+    console.log("Formulario enviado:", formData); // Imprimir los datos del formulario
   };
 
   return (
@@ -84,10 +83,12 @@ const CursoInfo = () => {
           <button
             className="w-48 py-3 border-2 border-gray-400 text-gray-400 text-lg font-semibold rounded-lg hover:cursor-pointer transition-all duration-300"
             onClick={() => {
-              // Desplazar hacia el formulario con ID "formulario"
-              document.getElementById("formulario").scrollIntoView({
-                behavior: "smooth",
-              });
+              const formulario = document.getElementById("formulario");
+              if (formulario) {
+                formulario.scrollIntoView({
+                  behavior: "smooth",
+                });
+              }
             }}
           >
             Inscríbete Ahora

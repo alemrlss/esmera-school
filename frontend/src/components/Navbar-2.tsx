@@ -2,15 +2,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo-blanco.png";
-import ScrollToTopButton from "./ScropTopButton";
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isDropdownOpenLegal, setIsDropdownOpenLegal] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  let timeoutId;
-  let timeoutIdLegal;
-
+  let timeoutId: ReturnType<typeof setTimeout>;
+  
   const handleMouseEnter = () => {
     clearTimeout(timeoutId);
     setIsDropdownOpen(true);
@@ -18,14 +15,6 @@ export default function Navbar() {
 
   const handleMouseLeave = () => {
     timeoutId = setTimeout(() => setIsDropdownOpen(false), 300); // Retardo de 300ms
-  };
-  const handleMouseEnterLegal = () => {
-    clearTimeout(timeoutIdLegal);
-    setIsDropdownOpenLegal(true);
-  };
-
-  const handleMouseLeaveLegal = () => {
-    timeoutIdLegal = setTimeout(() => setIsDropdownOpenLegal(false), 300); // Retardo de 300ms
   };
 
   const toggleMobileMenu = () => {
@@ -129,42 +118,6 @@ export default function Navbar() {
             Contacto
           </Link>
 
-          <div
-            className="relative"
-            onMouseEnter={handleMouseEnterLegal}
-            onMouseLeave={handleMouseLeaveLegal}
-          >
-            <button className="hover:text-gray-300 transition">Legal</button>
-            {isDropdownOpenLegal && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="absolute left-0 mt-2 bg-white text-black rounded shadow-lg w-40 z-10"
-                onMouseEnter={handleMouseEnterLegal} // Evita que se cierre al mover el mouse dentro
-                onMouseLeave={handleMouseLeaveLegal}
-              >
-                <Link
-                  to="/cursos/barberia"
-                  className="block px-4 py-2 hover:bg-gray-200"
-                >
-                  Arraigo por formación
-                </Link>
-                <Link
-                  to="/cursos/peluqueria"
-                  className="block px-4 py-2 hover:bg-gray-200"
-                >
-                  Estancia por estudios
-                </Link>
-                <Link
-                  to="/cursos/estetica"
-                  className="block px-4 py-2 hover:bg-gray-200"
-                >
-                  Visa de estudios
-                </Link>
-              </motion.div>
-            )}
-          </div>
           <Link to="/noticias" className="hover:text-gray-300 transition">
             Blog
           </Link>
@@ -221,36 +174,6 @@ export default function Navbar() {
                 onClick={closeMobileMenu}
               >
                 Maquillaje
-              </Link>
-            </div>
-          </div>
-
-          {/* Menú Legal en móvil */}
-          <div className="relative">
-            <button className="block w-full text-left hover:text-gray-300 transition">
-              Legal
-            </button>
-            <div className="space-y-2 mt-2 pl-4">
-              <Link
-                to="/legal/arraigo"
-                className="block px-4 py-2 hover:bg-gray-200"
-                onClick={closeMobileMenu}
-              >
-                Arraigo por formación
-              </Link>
-              <Link
-                to="/legal/estancia"
-                className="block px-4 py-2 hover:bg-gray-200"
-                onClick={closeMobileMenu}
-              >
-                Estancia por estudios
-              </Link>
-              <Link
-                to="/legal/visa"
-                className="block px-4 py-2 hover:bg-gray-200"
-                onClick={closeMobileMenu}
-              >
-                Visa de estudios
               </Link>
             </div>
           </div>

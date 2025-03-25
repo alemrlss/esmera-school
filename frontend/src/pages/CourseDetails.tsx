@@ -3,9 +3,11 @@ import courses from "../data/courses";
 import CourseList from "../components/Courses/CourseList";
 import { useRef } from "react";
 
+// Tipado para la categoría de cursos
+
 const CourseDetails = () => {
-  const { categoria } = useParams();
-  const categoriaData = courses[categoria];
+  const { categoria } = useParams<{ categoria: string }>(); // Tipamos useParams
+  const categoriaData = courses[categoria as keyof typeof courses]; // Tipamos el acceso a la categoría
 
   // Creamos una referencia para la lista de cursos
   const courseListRef = useRef<HTMLDivElement | null>(null);
@@ -61,7 +63,7 @@ const CourseDetails = () => {
 
       {/* Lista de cursos, ahora con referencia para hacer scroll */}
       <div ref={courseListRef}>
-        <CourseList categoria={categoria} cursos={categoriaData.cursos} />
+        <CourseList categoria={categoria ?? ""} cursos={categoriaData.cursos} />
       </div>
     </div>
   );

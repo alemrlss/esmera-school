@@ -9,7 +9,7 @@ function Certifications() {
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto max-w-6xl px-6">
         {/* Certificación 1 */}
-        <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-md hover:shadow-lg p-6 border border-gray-200 transition-transform duration-300 hover:-translate-y-1">
+        <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-md  p-6 border border-gray-200 transition-transform duration-300 ">
           <img
             src={OmatLogo}
             alt="Certificación ITEC"
@@ -22,7 +22,7 @@ function Certifications() {
         </div>
 
         {/* Certificación 2 */}
-        <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-md hover:shadow-lg p-6 border border-gray-200 transition-transform duration-300 hover:-translate-y-1">
+        <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-md  p-6 border border-gray-200 transition-transform duration-300 ">
           <img
             src={OmatLogo}
             alt="Certificación OMAT"
@@ -35,48 +35,47 @@ function Certifications() {
         </div>
 
         {/* Certificación 3 */}
-        <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-md hover:shadow-lg p-6 border border-gray-200 transition-transform duration-300 hover:-translate-y-1">
+        <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-md  p-6 border border-gray-200 transition-transform duration-300 ">
           <img
             src={OmatLogo}
             alt="Certificación SEPE"
             className="w-32 h-32 object-contain mb-4"
           />
-          <p className="text-center font-bold text-lg">SEPE</p>
+          <p className="text-center font-bold text-lg">Comunidad de Madrid</p>
           <p className="text-sm text-center text-gray-600">
             Reconocimiento oficial como agencia de colocación.
           </p>
         </div>
 
         {/* Certificación 4 */}
-        <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-md hover:shadow-lg p-6 border border-gray-200 transition-transform duration-300 hover:-translate-y-1">
+        <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-md  p-6 border border-gray-200 transition-transform duration-300 ">
           <img
             src={OmatLogo}
             alt="Certificación Internacional"
             className="w-32 h-32 object-contain mb-4"
           />
           <p className="text-center font-bold text-lg">
-            Certificado Internacional
+            Euro Pass
           </p>
           <p className="text-sm text-center text-gray-600">
             Certificación en educación y desarrollo profesional.
           </p>
         </div>
-
         {/* Certificación 5 */}
-        <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-md hover:shadow-lg p-6 border border-gray-200 transition-transform duration-300 hover:-translate-y-1">
+        <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-md  p-6 border border-gray-200 transition-transform duration-300 ">
           <img
             src={OmatLogo}
             alt="Certificación XYZ"
             className="w-32 h-32 object-contain mb-4"
           />
-          <p className="text-center font-bold text-lg">Certificado XYZ</p>
+          <p className="text-center font-bold text-lg">Itec</p>
           <p className="text-sm text-center text-gray-600">
             Acreditación adicional en formación profesional.
           </p>
         </div>
 
         {/* Certificación 6 */}
-        <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-md hover:shadow-lg p-6 border border-gray-200 transition-transform duration-300 hover:-translate-y-1">
+        <div className="flex flex-col items-center justify-center bg-white rounded-2xl shadow-md  p-6 border border-gray-200 transition-transform duration-300 ">
           <img
             src={OmatLogo}
             alt="Certificación ABC"
