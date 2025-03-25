@@ -2,7 +2,7 @@ import React from 'react';
 
 function WhatsappButton() {
   return (
-    <div className="d-tooltip d-tooltip-open d-tooltip-right" data-tip="¡Contacta con nosotros!">
+    <div className="d-tooltip d-tooltip-open d-tooltip-right" >
       <a
         href="#"
         target="_blank"

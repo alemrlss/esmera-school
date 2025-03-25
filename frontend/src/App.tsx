@@ -21,7 +21,6 @@ function App() {
           <Route path="/cursos/:categoria" element={<CourseDetails />} />
           <Route path="/cursos/:categoria/:id" element={<CursoInfo />} />
 
-
           <Route path="*" element={<h2>Ruta 404</h2>} />
         </Route>
       </Routes>

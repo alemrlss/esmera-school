@@ -1,5 +1,4 @@
-import React from "react";
-import headerImage from "../assets/banner-blog.png";
+import headerImage from "../assets/banners/banner_noticias.png";
 
 function NoticesPage() {
   const news = [

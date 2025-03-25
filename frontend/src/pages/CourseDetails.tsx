@@ -31,7 +31,7 @@ const CourseDetails = () => {
   }
 
   return (
-    <div >
+    <div>
       {/* Banner con título y descripción */}
       <div className="relative w-full h-64 md:h-80 lg:h-96 mb-8">
         <img
@@ -60,9 +60,7 @@ const CourseDetails = () => {
       </div>
 
       {/* Lista de cursos, ahora con referencia para hacer scroll */}
-      <div
-        ref={courseListRef}
-      >
+      <div ref={courseListRef}>
         <CourseList categoria={categoria} cursos={categoriaData.cursos} />
       </div>
     </div>

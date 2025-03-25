@@ -1,5 +1,5 @@
 import { Phone } from "lucide-react";
-import headerImage from "../assets/banner-trasparent.png";
+import headerImage from "../assets/banners/banner_conoce_esmera.png";
 import { motion } from "framer-motion";
 
 function ConoceEsmeraPage() {

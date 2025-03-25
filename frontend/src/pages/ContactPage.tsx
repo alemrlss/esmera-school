@@ -1,4 +1,4 @@
-import headerImage from "../assets/banner-contact.png"; // Cambia la ruta a la imagen que quieras usar.
+import headerImage from "../assets/banners/banner_contacto.png"; // Cambia la ruta a la imagen que quieras usar.
 
 function ContactPage() {
   return (
