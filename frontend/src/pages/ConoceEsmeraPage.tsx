@@ -1,5 +1,6 @@
 import { Book, Briefcase, GraduationCap, Users } from "lucide-react";
-import headerImage from "../assets/banners/test.png";
+import headerImageMobile from "../assets/test/movil.png";
+import headerImageDesktop from "../assets/test/desktop-test.png";
 import { motion } from "framer-motion";
 import amistadImage from "../assets/valores/amistad.png";
 import liderazgoImage from "../assets/valores/liderazgo.png";
@@ -16,11 +17,20 @@ function ConoceEsmeraPage() {
         content="Conoce Esmera, un centro de formación con más de 20 años de experiencia en el mundo del cuidado personal. Prepara tu futuro profesional hoy."
       />
       <motion.div className="w-full relative">
+        {/* Imagen para dispositivos móviles */}
         <img
-          src={headerImage}
+          src={headerImageMobile}
           alt="Centro de formación Esmera, especializado en el cuidado personal"
-          className="w-full h-[200px] md:h-[300px] lg:h-[400px] object-cover"
+          className="w-full md:hidden "
         />
+
+        {/* Imagen para dispositivos de escritorio */}
+        <img
+          src={headerImageDesktop}
+          alt="Centro de formación Esmera, especializado en el cuidado personal"
+          className="w-full object-cover hidden md:block"
+        />
+
         <div className="absolute top-0 left-0 w-full h-full text-white flex flex-col items-center justify-center px-4 sm:px-8 md:px-16">
           <motion.h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold">
             CONOCE ESMERA

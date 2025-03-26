@@ -1,24 +1,45 @@
-import headerImage from "../assets/contact/contact.png"; // Cambia la ruta a la imagen que quieras usar.
 import { motion } from "framer-motion";
+import headerImageMobile from "../assets/test/movil.png";
+import headerImageDesktop from "../assets/test/desktop-test.png";
+
 function ContactPage() {
   return (
     <div className="flex flex-col items-center justify-center space-y-8">
       {/* Encabezado con la imagen */}
-      <div className="w-full relative">
+      <motion.div
+        className="w-full relative"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        {/* Imagen para dispositivos móviles */}
         <img
-          src={headerImage}
-          alt="Encabezado de la página"
-          className="w-full object-cover h-64 sm:h-80 md:h-96"
+          src={headerImageMobile}
+          alt="Centro de formación Esmera, especializado en el cuidado personal"
+          className="w-full md:hidden "
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60 flex items-center justify-center">
-          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-bold">
+
+        {/* Imagen para dispositivos de escritorio */}
+        <img
+          src={headerImageDesktop}
+          alt="Centro de formación Esmera, especializado en el cuidado personal"
+          className="w-full object-cover hidden md:block"
+        />
+
+        <div className="absolute top-0 left-0 w-full h-full text-white flex flex-col items-center justify-center px-4 sm:px-8 md:px-16">
+          <motion.h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold">
             CONTACTO
-          </h1>
+          </motion.h1>
         </div>
-      </div>
+      </motion.div>
 
       {/* Formulario de contacto */}
-      <div className="max-w-3xl w-full px-6 py-8 bg-white rounded-2xl shadow-2xl my-10 mx-4 sm:mx-8 -mt-20 z-10">
+      <motion.div
+        className="max-w-3xl w-full px-6 py-8 bg-white rounded-2xl shadow-2xl my-10 mx-4 sm:mx-8 -mt-20 z-10"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <h2 className="text-2xl font-semibold text-center text-[#0057a8] mb-6">
           Envíanos tu mensaje
         </h2>
@@ -85,10 +106,15 @@ function ContactPage() {
             </button>
           </div>
         </form>
-      </div>
+      </motion.div>
 
       {/* Testimonios */}
-      <div className="flex flex-col items-center justify-center space-y-12  my-4 lg:my-20">
+      <motion.div
+        className="flex flex-col items-center justify-center space-y-12 my-4 lg:my-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
         <h2 className="text-3xl lg:text-5xl font-semibold text-center text-[#0057a8] mb-8">
           Lo que dicen nuestros alumnos...
         </h2>
@@ -97,7 +123,7 @@ function ContactPage() {
         <div className="flex flex-wrap justify-center gap-8 px-4 sm:px-8">
           {/* Testimonio 1 */}
           <motion.div
-            className="bg-white w-full sm:w-96 md:w-80 shadow-xl rounded-lg p-6 transition-shadow duration-300 ease-in-out hover:shadow-2xl transform "
+            className="bg-white w-full sm:w-96 md:w-80 shadow-xl rounded-lg p-6 transition-shadow duration-300 ease-in-out hover:shadow-2xl transform"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -128,10 +154,10 @@ function ContactPage() {
 
           {/* Testimonio 2 */}
           <motion.div
-            className="bg-white w-full sm:w-96 md:w-80 shadow-xl rounded-lg p-6 transition-shadow duration-300 ease-in-out hover:shadow-2xl transform "
+            className="bg-white w-full sm:w-96 md:w-80 shadow-xl rounded-lg p-6 transition-shadow duration-300 ease-in-out hover:shadow-2xl transform"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.2 }}
           >
             <div className="flex items-center space-x-4 mb-4">
               <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#0057a8]">
@@ -157,7 +183,7 @@ function ContactPage() {
 
           {/* Testimonio 3 */}
           <motion.div
-            className="bg-white w-full sm:w-96 md:w-80 shadow-xl rounded-lg p-6 transition-shadow duration-300 ease-in-out hover:shadow-2xl transform "
+            className="bg-white w-full sm:w-96 md:w-80 shadow-xl rounded-lg p-6 transition-shadow duration-300 ease-in-out hover:shadow-2xl transform"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -186,7 +212,7 @@ function ContactPage() {
             </p>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

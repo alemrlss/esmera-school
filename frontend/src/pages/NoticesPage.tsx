@@ -1,4 +1,6 @@
-import headerImage from "../assets/blog/blog.png";
+import { motion } from "framer-motion";
+import headerImageMobile from "../assets/test/movil.png";
+import headerImageDesktop from "../assets/test/desktop-test.png";
 
 function NoticesPage() {
   const news = [
@@ -41,27 +43,38 @@ function NoticesPage() {
 
   return (
     <div>
-      {/* Encabezado */}
-      <div className="relative w-full">
+      <motion.div className="w-full relative">
+        {/* Imagen para dispositivos móviles */}
         <img
-          src={headerImage}
-          alt="Encabezado de la página"
-          className="w-full object-cover h-64 sm:h-80 md:h-96"
+          src={headerImageMobile}
+          alt="Centro de formación Esmera, especializado en el cuidado personal"
+          className="w-full md:hidden "
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60 flex items-center justify-center">
-          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold">
+
+        {/* Imagen para dispositivos de escritorio */}
+        <img
+          src={headerImageDesktop}
+          alt="Centro de formación Esmera, especializado en el cuidado personal"
+          className="w-full object-cover hidden md:block"
+        />
+
+        <div className="absolute top-0 left-0 w-full h-full text-white flex flex-col items-center justify-center px-4 sm:px-8 md:px-16">
+          <motion.h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold">
             BLOG
-          </h1>
+          </motion.h1>
         </div>
-      </div>
+      </motion.div>
 
       {/* Contenido de noticias */}
       <div className="p-6 max-w-screen-xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6">
           {news.map((article, index) => (
-            <div
+            <motion.div
               key={index}
               className="d-card card bg-base-100 shadow-xl rounded-lg transform hover:shadow-2xl transition-all duration-300"
+              initial={{ opacity: 0, y: 0 }} // Inicialmente invisible y desplazada
+              animate={{ opacity: 1, y: 0 }} // Animación a opacidad 1 y posición original
+              transition={{ delay: index * 0.2, duration: 0.5 }} // Retraso para cada tarjeta
             >
               <figure className="overflow-hidden rounded-t-lg">
                 <img
@@ -83,7 +96,7 @@ function NoticesPage() {
                   </button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

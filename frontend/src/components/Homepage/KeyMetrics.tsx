@@ -19,9 +19,7 @@ function KeyMetrics() {
         <div className="relative flex flex-col items-center justify-center border-2 rounded-full shadow-lg w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 p-4">
           <p className="text-xl sm:text-2xl md:text-3xl font-bold">+100</p>
           <div className="border-b border-gray-300 w-full my-2"></div>
-          <p className="text-xs sm:text-sm md:text-base text-center">
-            Cursos 
-          </p>
+          <p className="text-xs sm:text-sm md:text-base text-center">Cursos</p>
         </div>
 
         {/* Item 2 */}
@@ -35,10 +33,10 @@ function KeyMetrics() {
 
         {/* Item 4 */}
         <div className="flex flex-col items-center justify-center border-2 rounded-full shadow-lg w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 p-4">
-          <p className="text-xl sm:text-2xl md:text-3xl font-bold">+500</p>
+          <p className="text-xl sm:text-2xl md:text-3xl font-bold">+900</p>
           <div className="border-b border-gray-300 w-full my-2"></div>
           <p className="text-xs sm:text-sm md:text-base text-center">
-            Valoraciones en google
+            Reseñas en Google
           </p>
         </div>
 
