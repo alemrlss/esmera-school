@@ -1,9 +1,19 @@
 import bannerTest from "../assets/banners/prueba-a.png";
+import bannerBarberia from "../assets/cursos/banner-barberia.png";
+
+import bannerMobileBarberia from "../assets/test/movil.png";
+import bannerDesktopBarberia from "../assets/test/desktop.png";
+
+import bannerMobilePeluqueria from "../assets/test/peluqueria-mobile.png";
+import bannerDesktopPeluqueria from "../assets/test/peluqueria-desktop.png";
+
 const courses = {
   barberia: {
     title: "Cursos de Barbería",
+    bannerMobile: bannerMobileBarberia,
+    bannerDesktop: bannerDesktopBarberia,
     description_html: `
-        <p class="text-sm text-gray-200 mb-4 max-w-lg">
+        <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
           Transforma tu pasión por la belleza en una <strong>carrera profesional</strong> con la 
           <span class="font-semibold">Escuela de Estética de Esmera School</span>. 
           Aprende las <strong>últimas técnicas</strong>, innova y destaca en el dinámico mundo de la estética. 
@@ -14,7 +24,7 @@ const courses = {
       "https://picsum.photos/1200/400",
       "https://picsum.photos/1200/400",
     ],
-    banner: bannerTest,
+    banner: bannerBarberia,
     btn_color: "bg-blue-700",
     cursos: [
       {
@@ -102,8 +112,10 @@ const courses = {
   },
   peluqueria: {
     title: "Academia de Peluquería",
+    bannerMobile: bannerMobilePeluqueria,
+    bannerDesktop: bannerDesktopPeluqueria,
     description_html: `
-        <p class="text-sm text-gray-200 mb-4 max-w-lg">
+        <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
           Desarrolla tus habilidades en cortes y colorimetría para convertirte en un <strong>experto en peluquería</strong>.
           Aprende las <strong>últimas tendencias</strong> en cortes, peinados y técnicas de coloración para destacar en el mundo de la estética.
         </p>
@@ -173,8 +185,10 @@ const courses = {
   },
   maquillaje: {
     title: "Academia de Maquillaje",
+    bannerMobile: bannerMobilePeluqueria,
+    bannerDesktop: bannerDesktopPeluqueria,
     description_html: `
-        <p class="text-sm text-gray-200 mb-4 max-w-lg">
+        <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
           Desarrolla tu arte con los mejores cursos de <strong>maquillaje profesional</strong>. Aprende técnicas innovadoras para realzar la belleza, desde lo más natural hasta lo más creativo.
         </p>
       `,
@@ -225,8 +239,10 @@ const courses = {
   },
   estetica: {
     title: "Academia de Estética",
+    bannerMobile: bannerMobilePeluqueria,
+    bannerDesktop: bannerDesktopPeluqueria,
     description_html: `
-        <p class="text-sm text-gray-200 mb-4 max-w-lg">
+        <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
           Conviértete en un experto en estética y cuidados faciales. Aprende técnicas de tratamientos avanzados para el cuidado y rejuvenecimiento de la piel.
         </p>
       `,
@@ -259,8 +275,10 @@ const courses = {
   },
   unas: {
     title: "Academia de Uñas",
+    bannerMobile: bannerMobilePeluqueria,
+    bannerDesktop: bannerDesktopPeluqueria,
     description_html: `
-        <p class="text-sm text-gray-200 mb-4 max-w-lg">
+        <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
           Aprende a crear diseños innovadores en uñas con técnicas de manicure, pedicure y más. Conviértete en un profesional del cuidado de las uñas.
         </p>
       `,

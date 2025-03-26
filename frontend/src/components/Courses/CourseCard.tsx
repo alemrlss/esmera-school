@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"; // Importamos el componente Link de React Router
+import useGoToPage from "../../hooks/useGoToPage";
 
 // Definimos la interfaz para el objeto "curso"
 interface Curso {
@@ -15,35 +15,44 @@ interface CourseCardProps {
 }
 
 const CourseCard = ({ categoria, curso }: CourseCardProps) => {
+  const goToPage = useGoToPage(); // Usa el hook
   return (
-    <div className="d-card bg-base-100 w-full sm:w-96 shadow-xs rounded-lg overflow-hidden hover:shadow-sm transition-all cursor-pointer">
-      <Link to={`/cursos/${categoria}/${curso.id}`} className="block w-full h-full"> {/* Enlace en toda la tarjeta */}
-        <figure className="relative w-full rounded-bl-3xl rounded-tr-3xl">
+    <div className="d-card bg-base-100 w-full sm:w-80 md:w-96 shadow-lg transition-all  cursor-pointer">
+      <div onClick={() => goToPage(`/cursos/${categoria}/${curso.id}`)}>
+        {/* Enlace en toda la tarjeta */}
+        <figure className="relative w-full h-[400px] sm:h-[400px] md:h-[400px] rounded-tr-2xl rounded-bl-2xl">
+          {/* Imagen responsiva */}
           <img
             src={curso.imagen}
             alt={curso.nombre}
-            className="object-cover w-full h-48 sm:h-56 md:h-64 transition-all opacity-80 hover:opacity-90"
+            className="object-cover w-full h-full transition-all duration-300"
           />
-          <div className="absolute inset-0 bg-black opacity-40 transition-all"></div> {/* Fondo oscuro */}
-          
-          {/* Etiqueta 'Popular' en la esquina superior izquierda */}
+          {/* Fondo oscuro con efecto sutil */}
+          <div className="absolute inset-0 bg-black opacity-30 hover:opacity-40 transition-all"></div>
+
+          {/* Etiqueta 'OFERTA' en la esquina superior izquierda */}
           {curso.isPopular && (
-            <span className="d-badge d-badge-success absolute top-2 left-2 text-sm text-white font-bold">
-              Nuevo
+            <span className="absolute top-3 left-3 bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-lg shadow-md">
+              OFERTA
             </span>
           )}
 
           {/* Contenido de la tarjeta */}
-          <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-4">
-            <h2 className="d-card-title text-xl font-semibold text-white mb-2">
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-center p-6 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+            {/* 🏆 Título del curso centrado verticalmente */}
+            <h2 className="text-2xl font-semibold text-white drop-shadow-lg">
               {curso.nombre}
             </h2>
-            <button className="border text-white cursor-pointer border-white w-full md:w-auto rounded-lg px-4 py-2 mt-4">
+          </div>
+
+          {/* Botón fijo en la parte inferior */}
+          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+            <button className="bg-transparent text-sm lg:text-base text-white font-semibold border-2 rounded-lg px-6 py-2 shadow-md transition-all cursor-pointer hover:bg-white hover:text-black">
               Más información
             </button>
           </div>
         </figure>
-      </Link>
+      </div>
     </div>
   );
 };

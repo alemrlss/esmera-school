@@ -29,23 +29,21 @@ function HomePage() {
           con más de 20 años de experiencia
         </motion.h2>
       </div>
-
       <motion.div
         className="d-divider w-1/4 mx-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }} // Retraso de 0.4s para la línea divisoria
       ></motion.div>
-
       <motion.p
-        className="text-center mx-10 lg:mx-96 mb-12"
+        className="text-center mx-auto max-w-3xl px-6 mb-12"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }} // Retraso de 0.6s para el párrafo
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
       >
-        Impulsa tu talento con una formación de excelencia en el mundo de la
-        belleza. Aprende técnicas innovadoras y conviértete en un profesional
-        altamente calificado.
+        Únete a la comunidad de Esmera School y aprende de los mejores en el
+        mundo de la estética y la belleza. Desarrolla tu talento, obtén
+        certificaciones y prepárate para un futuro lleno de oportunidades.
       </motion.p>
 
       <CourseChoice />

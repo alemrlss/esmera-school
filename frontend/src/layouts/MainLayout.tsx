@@ -1,21 +1,16 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
-import WhatsappButton from "../components/WhatsappButton";
-import Navbar2 from "../components/Navbar-2";
-import ScrollToTopButton from "../components/ScropTopButton";
+import Navbar from "../components/Navbar";
 
 function MainLayout() {
   return (
-    <div className="flex flex-col min-h-screen relative">
-      <Navbar2 />
-      <main className="flex-grow">
+    <div className="flex flex-col">
+      <Navbar />
+      <main className="flex-grow pt-16">
+        {" "}
         <Outlet />
       </main>
       <Footer />
-
-      {/* Botón flotante de WhatsApp */}
-      <WhatsappButton />
-      <ScrollToTopButton />
     </div>
   );
 }

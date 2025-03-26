@@ -35,15 +35,23 @@ const CourseDetails = () => {
   return (
     <div>
       {/* Banner con título y descripción */}
-      <div className="relative w-full h-64 md:h-80 lg:h-96 mb-8">
-        <img
-          src={categoriaData.banner}
-          alt={`Banner de ${categoriaData.title}`}
-          className="w-full h-full object-cover "
-        />
+      <div className="relative w-full">
+        <picture>
+          {/* Imagen para dispositivos móviles */}
+          <source
+            media="(max-width: 768px)"
+            srcSet={categoriaData.bannerMobile}
+          />
+          {/* Imagen para escritorio */}
+          <img
+            src={categoriaData.bannerDesktop}
+            alt="Banner"
+            className="w-full h-full object-cover"
+          />
+        </picture>
         <div className="absolute inset-0 flex flex-col justify-center items-center text-left p-4 ">
           <div className="">
-            <h1 className="text-4xl font-bold text-white mb-4">
+            <h1 className="text-2xl lg:text-4xl font-bold text-white">
               {categoriaData.title}
             </h1>
             <p
@@ -53,7 +61,8 @@ const CourseDetails = () => {
             ></p>
             <button
               onClick={handleScrollToCourseList} // Llamamos la función cuando se hace clic
-              className={`d-btn d-btn-lg px-6 py-3 border-none text-white rounded-3xl shadow-md hover:shadow-lg transition-all ${categoriaData.btn_color}`}
+              className={`d-btn d-btn-md lg:d-btn-lg  py-3 text border-none text-white rounded-3xl shadow-md hover:shadow-lg transition-all ${categoriaData.btn_color} 
+  sm:px-4 sm:py-2 sm:text-sm md:px-6 md:py-3 md:text-base`}
             >
               Ver todos los cursos
             </button>
@@ -62,7 +71,7 @@ const CourseDetails = () => {
       </div>
 
       {/* Lista de cursos, ahora con referencia para hacer scroll */}
-      <div ref={courseListRef}>
+      <div ref={courseListRef} className="py-20">
         <CourseList categoria={categoria ?? ""} cursos={categoriaData.cursos} />
       </div>
     </div>

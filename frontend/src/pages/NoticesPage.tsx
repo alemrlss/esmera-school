@@ -1,4 +1,4 @@
-import headerImage from "../assets/banners/banner_noticias.png";
+import headerImage from "../assets/blog/blog.png";
 
 function NoticesPage() {
   const news = [
@@ -46,7 +46,7 @@ function NoticesPage() {
         <img
           src={headerImage}
           alt="Encabezado de la página"
-          className="w-full h-[250px] sm:h-[350px] md:h-[400px] object-cover rounded-b-3xl shadow-lg"
+          className="w-full object-cover h-64 sm:h-80 md:h-96"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-60 flex items-center justify-center">
           <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-extrabold">
