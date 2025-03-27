@@ -6,12 +6,7 @@ function ContactPage() {
   return (
     <div className="flex flex-col items-center justify-center space-y-8">
       {/* Encabezado con la imagen */}
-      <motion.div
-        className="w-full relative"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
+      <motion.div className="w-full relative">
         {/* Imagen para dispositivos móviles */}
         <img
           src={headerImageMobile}
@@ -100,7 +95,7 @@ function ContactPage() {
           <div className="text-center mt-6">
             <button
               type="submit"
-              className="w-full py-3 px-6 text-white bg-[#0057a8] rounded-lg shadow-lg hover:bg-[#004a91] hover:shadow-xl focus:outline-none transition duration-300"
+              className="w-full py-3 px-6  cursor-pointer text-white bg-[#0057a8] rounded-lg shadow-lg hover:bg-[#004a91] hover:shadow-xl focus:outline-none transition duration-300"
             >
               Enviar Mensaje
             </button>
@@ -120,16 +115,16 @@ function ContactPage() {
         </h2>
 
         {/* Contenedor de tarjetas responsivas */}
-        <div className="flex flex-wrap justify-center gap-8 px-4 sm:px-8">
+        <div className="flex flex-wrap justify-center gap-10 px-4 sm:px-8">
           {/* Testimonio 1 */}
           <motion.div
-            className="bg-white w-full sm:w-96 md:w-80 shadow-xl rounded-lg p-6 transition-shadow duration-300 ease-in-out hover:shadow-2xl transform"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            className="bg-white w-full sm:w-96  shadow-lg rounded-xl p-6  transition-shadow duration-300"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <div className="flex items-center space-x-4 mb-4">
-              <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#0057a8]">
+              <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-[#0057a8]">
                 <img
                   src="https://randomuser.me/api/portraits/men/29.jpg"
                   alt="Avatar"
@@ -137,15 +132,15 @@ function ContactPage() {
                 />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-800">
-                  Sergio Marquez
+                <h3 className="text-xl font-semibold text-gray-800">
+                  Fernando Garcia
                 </h3>
                 <p className="text-sm text-gray-500">
-                  Estudiante de Estética Profesional
+                  Estudiante de Barbería Profesional
                 </p>
               </div>
             </div>
-            <p className="text-gray-600 italic mb-4">
+            <p className="text-gray-600 italic">
               "El curso de estética profesional me ha ayudado a mejorar mis
               habilidades y a aprender nuevas técnicas. ¡Estoy muy contento con
               los resultados!"
@@ -154,13 +149,13 @@ function ContactPage() {
 
           {/* Testimonio 2 */}
           <motion.div
-            className="bg-white w-full sm:w-96 md:w-80 shadow-xl rounded-lg p-6 transition-shadow duration-300 ease-in-out hover:shadow-2xl transform"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            className="bg-white w-full sm:w-96 shadow-lg rounded-xl p-6  transition-shadow duration-300"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="flex items-center space-x-4 mb-4">
-              <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#0057a8]">
+              <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-[#008e47]">
                 <img
                   src="https://randomuser.me/api/portraits/women/34.jpg"
                   alt="Avatar"
@@ -168,13 +163,15 @@ function ContactPage() {
                 />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-800">Ana García</h3>
+                <h3 className="text-xl font-semibold text-gray-800">
+                  Sara Salazar
+                </h3>
                 <p className="text-sm text-gray-500">
-                  Estudiante de Micropigmentación
+                  Estudiante de Peluqueria
                 </p>
               </div>
             </div>
-            <p className="text-gray-600 italic mb-4">
+            <p className="text-gray-600 italic">
               "El curso de micropigmentación me ha permitido aprender nuevas
               técnicas y mejorar mi técnica. ¡Estoy muy contenta con los
               resultados!"
@@ -183,13 +180,13 @@ function ContactPage() {
 
           {/* Testimonio 3 */}
           <motion.div
-            className="bg-white w-full sm:w-96 md:w-80 shadow-xl rounded-lg p-6 transition-shadow duration-300 ease-in-out hover:shadow-2xl transform"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            className="bg-white w-full sm:w-96  shadow-lg rounded-xl p-6  transition-shadow duration-300"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="flex items-center space-x-4 mb-4">
-              <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#0057a8]">
+              <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-[#0057a8]">
                 <img
                   src="https://randomuser.me/api/portraits/men/22.jpg"
                   alt="Avatar"
@@ -197,15 +194,15 @@ function ContactPage() {
                 />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-800">
-                  Alejandro Morales
+                <h3 className="text-xl font-semibold text-gray-800">
+                  Juan Mendez
                 </h3>
                 <p className="text-sm text-gray-500">
-                  Estudiante de Barbería Internacional
+                  Estudiante de Estética Internacional
                 </p>
               </div>
             </div>
-            <p className="text-gray-600 italic mb-4">
+            <p className="text-gray-600 italic">
               "El curso de barbería internacional me ha permitido aprender
               nuevas técnicas y mejorar mi técnica. ¡Estoy muy contento con los
               resultados!"

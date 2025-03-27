@@ -2,12 +2,16 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo-blanco.png";
+import useGoToPage from "../hooks/useGoToPage"; // Importamos el hook
+import { GraduationCap } from "lucide-react";
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   let timeoutId: ReturnType<typeof setTimeout>;
+
+  const goToPage = useGoToPage(); // Usamos el hook
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,9 +83,12 @@ export default function Navbar() {
 
         {/* Menú para pantallas grandes */}
         <div className="hidden lg:flex space-x-6 items-center text-white">
-          <Link to="/" className="hover:text-gray-300 transition ">
+          <button
+            onClick={() => goToPage("/")}
+            className="hover:text-gray-300 transition cursor-pointer"
+          >
             Inicio
-          </Link>
+          </button>
           <div
             className="relative"
             onMouseEnter={handleMouseEnter}
@@ -102,26 +109,43 @@ export default function Navbar() {
                   "Uñas",
                   "Maquillaje",
                 ].map((curso) => (
-                  <Link
+                  <button
                     key={curso}
-                    to={`/cursos/${convertToSlug(curso)}`}
-                    className="block px-4 py-2 hover:bg-gray-200"
+                    onClick={() => goToPage("/cursos/" + convertToSlug(curso))}
+                    className="w-full text-left cursor-pointer px-4 py-2 hover:bg-gray-200"
                   >
                     {curso}
-                  </Link>
+                  </button>
                 ))}
               </motion.div>
             )}
           </div>
-          <Link to="/conoce-esmera" className="hover:text-gray-300 transition">
+          <button
+            onClick={() => goToPage("/conoce-esmera")}
+            className="hover:text-gray-300 transition cursor-pointer"
+          >
             Conoce Esmera
-          </Link>
-          <Link to="/contacto" className="hover:text-gray-300 transition">
+          </button>
+          <button
+            onClick={() => goToPage("/contacto")}
+            className="hover:text-gray-300 transition cursor-pointer"
+          >
             Contacto
-          </Link>
-          <Link to="/noticias" className="hover:text-gray-300 transition">
-            Blog
-          </Link>
+          </button>
+          <button
+            onClick={() => goToPage("/noticias")}
+            className="hover:text-gray-300 transition cursor-pointer"
+          >
+            Noticias
+          </button>
+
+          <button
+            onClick={() => goToPage("/mi-campus")}
+            className="bg-[#d57f11] text-white py-2 px-6 rounded-full shadow-lg  transition-all duration-300 cursor-pointer transform hover:scale-95 flex items-center space-x-2"
+          >
+            <GraduationCap size={20} /> {/* Ícono de graduación */}
+            <span>Mi Campus</span>
+          </button>
         </div>
 
         {/* Menú móvil */}
@@ -132,51 +156,72 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             className="lg:hidden absolute top-14 left-0 w-full bg-[#0057a8] text-white p-4 z-40 space-y-2"
           >
-            <Link
-              to="/"
-              className="block hover:text-gray-300 transition"
-              onClick={closeMobileMenu}
+            <button
+              onClick={() => {
+                goToPage("/");
+                closeMobileMenu();
+              }}
+              className="hover:text-gray-300 transition cursor-pointer"
             >
               Inicio
-            </Link>
+            </button>
             <button className="block w-full text-left hover:text-gray-300 transition">
               Cursos
             </button>
             <div className="">
               {["Barbería", "Peluquería", "Estética", "Uñas", "Maquillaje"].map(
                 (curso) => (
-                  <Link
+                  <button
                     key={curso}
-                    to={`/cursos/${convertToSlug(curso)}`}
                     className="block px-4 py-2 hover:bg-gray-200"
-                    onClick={closeMobileMenu}
+                    onClick={() => {
+                      goToPage(`/cursos/${convertToSlug(curso)}`);
+                      closeMobileMenu();
+                    }}
                   >
                     {curso}
-                  </Link>
+                  </button>
                 )
               )}
             </div>
-            <Link
-              to="/conoce-esmera"
+            <button
               className="block hover:text-gray-300 transition"
-              onClick={closeMobileMenu}
+              onClick={() => {
+                goToPage("conoce-esmera");
+                closeMobileMenu();
+              }}
             >
               Conoce Esmera
-            </Link>
-            <Link
-              to="/contacto"
+            </button>
+            <button
               className="block hover:text-gray-300 transition"
-              onClick={closeMobileMenu}
+              onClick={() => {
+                goToPage("contacto");
+                closeMobileMenu();
+              }}
             >
               Contacto
-            </Link>
-            <Link
-              to="/noticias"
+            </button>
+            <button
               className="block hover:text-gray-300 transition"
-              onClick={closeMobileMenu}
+              onClick={() => {
+                goToPage("noticias");
+                closeMobileMenu();
+              }}
             >
               Noticias
-            </Link>
+            </button>
+
+            <button
+              onClick={() => {
+                goToPage("mi-campus");
+                closeMobileMenu();
+              }}
+              className="bg-[#d57f11] text-white py-2 px-6 rounded-full shadow-lg  transition-all duration-300 cursor-pointer transform hover:scale-95 flex items-center space-x-2"
+            >
+              <GraduationCap size={20} /> {/* Ícono de graduación */}
+              <span>Mi Campus</span>
+            </button>
           </motion.div>
         )}
       </div>

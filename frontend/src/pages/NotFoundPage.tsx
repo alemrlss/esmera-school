@@ -4,7 +4,7 @@ function NotFoundPage() {
   return (
     <div className="flex flex-col items-center justify-center space-y-4 min-h-screen bg-gray-100 text-center">
       {/* Título de error */}
-      <h1 className="text-6xl font-extrabold text-red-500">404</h1>
+      <h1 className="text-6xl font-extrabold text-blue-500">404</h1>
       <p className="text-2xl font-semibold text-gray-700">
         ¡Vaya! Página no encontrada
       </p>

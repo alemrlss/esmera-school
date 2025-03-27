@@ -7,6 +7,7 @@ import ConoceEsmeraPage from "./pages/ConoceEsmeraPage";
 import CourseDetails from "./pages/CourseDetails";
 import CursoInfo from "./pages/CourseInfo";
 import NotFoundPage from "./pages/NotFoundPage";
+import MiCampus from "./pages/MiCampus";
 function App() {
   return (
     <Router>
@@ -16,8 +17,11 @@ function App() {
           <Route path="conoce-esmera" element={<ConoceEsmeraPage />} />
           <Route path="contacto" element={<ContactPage />} />
           <Route path="noticias" element={<NoticesPage />} />
+          <Route path="mi-campus" element={<MiCampus />} />
 
           <Route path="/cursos/:categoria" element={<CourseDetails />} />
+          <Route path="/cursos/:categoria/:id" element={<CursoInfo />} />
+
           <Route path="/cursos/:categoria/:id" element={<CursoInfo />} />
 
           <Route path="*" element={<NotFoundPage />} />

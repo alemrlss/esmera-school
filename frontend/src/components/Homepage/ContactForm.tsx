@@ -6,11 +6,16 @@ function ContactForm() {
 
   return (
     <div
-      className="w-full pt-32 pb-5 bg-[#0057a8]"
-      style={{ clipPath: "polygon(0 20%, 100% 0, 100% 100%, 0 100%)" }}
+      className="w-full pt-32 mt-12 pb-5 bg-[#0057a8]"
+      style={{
+        clipPath:
+          window.innerWidth < 768
+            ? "polygon(0 10%, 100% 0, 100% 100%, 0 100%)"
+            : "polygon(0 20%, 100% 0, 100% 100%, 0 100%)",
+      }}
     >
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-        <div className="w-full md:w-1/2 p-8 bg-white rounded-xl shadow-lg mb-0 md:mb-0">
+        <div className="w-full  lg:mt-0 md:w-1/2 p-8 bg-white rounded-xl shadow-lg mb-0 md:mb-0">
           <h3 className="text-4xl font-extrabold mb-8 text-center text-[#0057a8]">
             Contáctanos
           </h3>
@@ -92,7 +97,6 @@ function ContactForm() {
           </form>
         </div>
 
-        {/* Sección de la derecha: Acordeón */}
         <div className="w-full md:w-1/2 mt-0 md:mt-0 md:pl-12">
           <h2 className="text-3xl font-bold text-[#0057a8] mb-6">
             Preguntas Frecuentes
@@ -103,50 +107,51 @@ function ContactForm() {
             <div className="d-collapse bg-base-100 border border-base-300">
               <input type="radio" name="my-accordion-1" />
               <div className="d-collapse-title font-semibold text-lg">
-                ¿Cuáles son los horarios de clases?
+                ¿Es necesario tener experiencia previa para inscribirme en los
+                cursos?
               </div>
               <div className="d-collapse-content text-sm">
-                Nuestros horarios varían según el nivel y curso. Contamos con
-                clases en la mañana y la tarde. Puedes consultar los horarios
-                específicos en nuestra página web o visitándonos en la escuela.
+                No es necesario tener experiencia previa para inscribirte en
+                muchos de nuestros cursos. Nuestros programas están diseñados
+                para estudiantes de todos los niveles, desde principiantes hasta
+                profesionales que desean ampliar sus conocimientos.
               </div>
             </div>
 
-            {/* Acordeón 2 */}
             <div className="d-collapse bg-base-100 border border-base-300">
               <input type="radio" name="my-accordion-1" />
               <div className="d-collapse-title font-semibold text-lg">
-                ¿Cuáles son los requisitos de inscripción?
+                ¿Puedo trabajar mientras estudio en Esmera School?
               </div>
               <div className="d-collapse-content text-sm">
-                Para inscribirte, necesitas presentar tu documento de identidad,
-                llenar el formulario de inscripción y realizar el pago de la
-                matrícula.
+                Sí, entendemos que muchos de nuestros estudiantes tienen otras
+                responsabilidades. Ofrecemos horarios flexibles para que puedas
+                estudiar sin que interfiera con tus otros compromisos laborales.
               </div>
             </div>
-
-            {/* Acordeón 3 */}
             <div className="d-collapse bg-base-100 border border-base-300">
               <input type="radio" name="my-accordion-1" />
               <div className="d-collapse-title font-semibold text-lg">
-                ¿La escuela ofrece actividades extracurriculares?
+                ¿Esmera School ofrece becas o descuentos?
               </div>
               <div className="d-collapse-content text-sm">
-                Sí, ofrecemos diversas actividades como deportes, arte, música y
-                clubes estudiantiles. ¡Anímate a participar!
+                Sí, de vez en cuando ofrecemos becas y descuentos para
+                estudiantes que cumplan ciertos criterios. Mantente al tanto de
+                nuestras promociones a través de nuestras redes sociales para
+                recibir noticias y ofertas especiales.
               </div>
             </div>
-
-            {/* Acordeón 5 */}
             <div className="d-collapse bg-base-100 border border-base-300">
               <input type="radio" name="my-accordion-1" />
               <div className="d-collapse-title font-semibold text-lg">
-                ¿Cómo se maneja la disciplina en la escuela?
+                ¿Las prácticas en Esmera School se realizan con modelos reales?
               </div>
               <div className="d-collapse-content text-sm">
-                Nuestra escuela sigue un reglamento disciplinario basado en el
-                respeto y la convivencia. Fomentamos el diálogo y la resolución
-                pacífica de conflictos.
+                Sí, en Esmera School, las prácticas se realizan con modelos
+                reales. Creemos que la experiencia práctica es fundamental para
+                la formación profesional, por lo que nuestros estudiantes tienen
+                la oportunidad de trabajar con personas reales en situaciones
+                reales, bajo la supervisión de nuestros expertos.
               </div>
             </div>
           </div>

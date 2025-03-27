@@ -40,7 +40,9 @@ function ConoceEsmeraPage() {
             para ser un profesional destacado en el mundo del cuidado personal.
           </motion.p>
           <motion.button
-            className="mt-6 px-6 py-2 text-xs lg:text-lg bg-[#008e47] border-2 border-[#008e47]  hover:cursor-pointer transition-all duration-300 shadow-lg rounded-full"
+            className="mt-6 px-6 py-2 text-xs lg:text-lg bg-[#008e47] border-2 border-[#008e47] cursor-pointer text-white 
+             hover:bg-[#006e37] hover:border-[#006e37] hover:shadow-xl
+             transition-all duration-300 shadow-lg rounded-full"
             aria-label="Contactar con Esmera"
             onClick={() => {
               navigate("/contacto");
@@ -65,23 +67,23 @@ function ConoceEsmeraPage() {
           className="text-4xl sm:text-5xl md:text-6xl font-bold text-center mb-8"
           initial={{ opacity: 0, y: 20 }} // Comienza con opacidad 0 y desplazado hacia abajo
           animate={{ opacity: 1, y: 0 }} // Finaliza con opacidad 1 y sin desplazamiento
-          transition={{ duration: 0.6, ease: "easeOut" }} // Duración de la animación más corta
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }} // Retraso de 0.2s para que se vea la animación después
         >
           Garantizar tu futuro
         </motion.p>
 
         <motion.div
           className="d-divider w-1/4 mx-auto"
-          initial={{ opacity: 0, y: 20 }} // Comienza con opacidad 0 y desplazado hacia abajo
-          animate={{ opacity: 1, y: 0 }} // Finaliza con opacidad 1 y sin desplazamiento
-          transition={{ duration: 0.6, ease: "easeOut" }} // Duración de la animación más corta
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }} // Retraso de 0.4s para la línea divisoria
         ></motion.div>
 
         <motion.p
-          className="text-center text-sm sm:text-lg mx-auto lg:mx-40 mt-8"
+          className="text-center mx-auto max-w-3xl px-6 mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.3 }} // Retraso de 0.9s para el texto
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
         >
           En Esmera, nos comprometemos a ofrecer una educación de calidad que no
           solo te prepare para enfrentar los retos del mundo del cuidado
@@ -93,8 +95,8 @@ function ConoceEsmeraPage() {
         </motion.p>
       </section>
       <section
-        className="bg-[#008e47] text-white py-28 px-8"
-        style={{ clipPath: "polygon(0 0, 100% 0, 100% 80%, 0 100%)" }}
+        className="bg-[#008e47] text-white py-20 px-8 min-h-[40px]"
+        style={{ clipPath: "polygon(0 0, 100% 0, 100% 85%, 0 100%)" }}
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8">
           NUESTRA MISIÓN
@@ -139,8 +141,7 @@ function ConoceEsmeraPage() {
           </div>
         </div>
       </section>
-      ;{/* Historia de la Empresa */}
-      {/* Historia de la Empresa */}
+
       <section className="py-16 px-8">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8">
           Nuestra Historia
@@ -256,8 +257,13 @@ function ConoceEsmeraPage() {
         </ul>
       </section>
       <section
-        className="bg-[#008e47] text-white py-16 lg:py-8 pt-64 lg:pt-40 text-center"
-        style={{ clipPath: "polygon(0 20%, 100% 0, 100% 100%, 0 100%)" }}
+        className="bg-[#008e47] text-white py-16 lg:py-8 pt-32 lg:pt-28 text-center"
+        style={{
+          clipPath:
+            window.innerWidth < 768
+              ? "polygon(0 10%, 100% 0, 100% 100%, 0 100%)"
+              : "polygon(0 20%, 100% 0, 100% 100%, 0 100%)",
+        }}
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8">
           NUESTROS VALORES
