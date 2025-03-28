@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import headerImageMobile from "../assets/test/movil.png";
 import headerImageDesktop from "../assets/test/desktop-test.png";
-
+import saraImage from "../assets/testimonios/sara.png";
+import fernandoImage from "../assets/testimonios/fernando.png";
+import sandraImage from "../assets/testimonios/sandra.png";
 function ContactPage() {
   return (
     <div className="flex flex-col items-center justify-center space-y-8">
@@ -126,7 +128,7 @@ function ContactPage() {
             <div className="flex items-center space-x-4 mb-4">
               <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-[#0057a8]">
                 <img
-                  src="https://randomuser.me/api/portraits/men/29.jpg"
+                  src={fernandoImage}
                   alt="Avatar"
                   className="w-full h-full object-cover"
                 />
@@ -157,17 +159,17 @@ function ContactPage() {
             <div className="flex items-center space-x-4 mb-4">
               <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-[#008e47]">
                 <img
-                  src="https://randomuser.me/api/portraits/women/34.jpg"
+                  src={sandraImage}
                   alt="Avatar"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-gray-800">
-                  Sara Salazar
+                  Sandra Cardona
                 </h3>
                 <p className="text-sm text-gray-500">
-                  Estudiante de Peluqueria
+                  Estudiante de Peluqueria 
                 </p>
               </div>
             </div>
@@ -188,17 +190,17 @@ function ContactPage() {
             <div className="flex items-center space-x-4 mb-4">
               <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-[#0057a8]">
                 <img
-                  src="https://randomuser.me/api/portraits/men/22.jpg"
+                  src={saraImage}
                   alt="Avatar"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-gray-800">
-                  Juan Mendez
+                  Sara Salazar
                 </h3>
                 <p className="text-sm text-gray-500">
-                  Estudiante de Estética Internacional
+                  Estudiante de Estètica  
                 </p>
               </div>
             </div>

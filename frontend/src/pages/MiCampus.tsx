@@ -1,4 +1,4 @@
-import construccion from "../assets/mi-campus/construyendo.gif";
+import construccion from "../assets/mi-campus/construyendo.png";
 import useGoToPage from "../hooks/useGoToPage";
 
 function MiCampus() {
