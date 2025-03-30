@@ -26,86 +26,86 @@ const courses = {
     ],
     banner: bannerBarberia,
     btn_color: "bg-blue-700",
-    cursos: [
+    courses: [
       {
         id: "corte-barba",
-        nombre: "Corte de Barba",
-        descripcion:
+        name: "Corte de Barba",
+        description:
           "Aprende las técnicas más efectivas para el cuidado y diseño de la barba. Desde el afeitado tradicional hasta el arreglo moderno.",
-        duracion: "1 mes",
-        imagen: "https://picsum.photos/400/200?random=1",
+        duration: "1 mes",
+        image: "https://picsum.photos/400/200?random=1",
         isPopular: true,
       },
       {
         id: "corte-degradado",
-        nombre: "Corte Degradado",
-        descripcion:
+        name: "Corte Degradado",
+        description:
           "Domina el arte del corte degradado, una de las técnicas más demandadas por los clientes modernos.",
-        duracion: "2 meses",
-        imagen: "https://picsum.photos/400/200?random=2",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=2",
         isPopular: false,
       },
       {
         id: "corte-femenino",
-        nombre: "Corte Femenino",
-        descripcion:
+        name: "Corte Femenino",
+        description:
           "Curso especializado en cortes de cabello para mujeres, técnicas de styling y cortes de tendencia.",
-        duracion: "2 meses",
-        imagen: "https://picsum.photos/400/200?random=3",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=3",
         isPopular: true,
       },
       {
         id: "peinados-especiales",
-        nombre: "Peinados Especiales",
-        descripcion:
+        name: "Peinados Especiales",
+        description:
           "Aprende a crear peinados únicos para eventos especiales: bodas, fiestas y más.",
-        duracion: "1 mes",
-        imagen: "https://picsum.photos/400/200?random=4",
+        duration: "1 mes",
+        image: "https://picsum.photos/400/200?random=4",
         isPopular: false,
       },
       {
         id: "coloracion-capilar",
-        nombre: "Coloración Capilar",
-        descripcion:
+        name: "Coloración Capilar",
+        description:
           "Curso completo sobre técnicas de coloración de cabello, desde mechas hasta tintes complejos.",
-        duracion: "3 meses",
-        imagen: "https://picsum.photos/400/200?random=5",
+        duration: "3 meses",
+        image: "https://picsum.photos/400/200?random=5",
         isPopular: true,
       },
       {
         id: "barberia-para-principiantes",
-        nombre: "Barbería para Principiantes",
-        descripcion:
+        name: "Barbería para Principiantes",
+        description:
           "Conoce los fundamentos de la barbería, desde el afeitado clásico hasta cortes sencillos.",
-        duracion: "1 mes",
-        imagen: "https://picsum.photos/400/200?random=6",
+        duration: "1 mes",
+        image: "https://picsum.photos/400/200?random=6",
         isPopular: false,
       },
       {
         id: "tendencias-2025",
-        nombre: "Tendencias 2025 en Corte y Estilo",
-        descripcion:
+        name: "Tendencias 2025 en Corte y Estilo",
+        description:
           "Curso que te prepara para las tendencias que dominarán el mundo de la barbería en los próximos años.",
-        duracion: "2 meses",
-        imagen: "https://picsum.photos/400/200?random=7",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=7",
         isPopular: true,
       },
       {
         id: "corte-creativo",
-        nombre: "Corte Creativo",
-        descripcion:
+        name: "Corte Creativo",
+        description:
           "Técnicas avanzadas de corte que permiten crear estilos únicos y personalizados para cada cliente.",
-        duracion: "3 meses",
-        imagen: "https://picsum.photos/400/200?random=8",
+        duration: "3 meses",
+        image: "https://picsum.photos/400/200?random=8",
         isPopular: false,
       },
       {
         id: "corte-y-peinado-de-hombre",
-        nombre: "Corte y Peinado de Hombre",
-        descripcion:
+        name: "Corte y Peinado de Hombre",
+        description:
           "Especialízate en cortes y peinados para hombres, incluyendo estilos modernos y clásicos.",
-        duracion: "2 meses",
-        imagen: "https://picsum.photos/400/200?random=9",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=9",
         isPopular: false,
       },
     ],
@@ -126,59 +126,59 @@ const courses = {
     ],
     banner: bannerTest,
     btn_color: "bg-green-700",
-    cursos: [
+    courses: [
       {
         id: "corte-femenino",
-        nombre: "Corte Femenino",
-        descripcion:
+        name: "Corte Femenino",
+        description:
           "Cortes modernos para mujeres que buscan estilo, desde cortes clásicos hasta los más innovadores.",
-        duracion: "3 meses",
-        imagen: "https://picsum.photos/400/200?random=12",
+        duration: "3 meses",
+        image: "https://picsum.photos/400/200?random=12",
         isPopular: true,
       },
       {
         id: "coloracion-avanzada",
-        nombre: "Coloración Avanzada",
-        descripcion:
+        name: "Coloración Avanzada",
+        description:
           "Técnicas avanzadas de coloración para cabellos rubios, tintes complejos y tonos vibrantes.",
-        duracion: "3 meses",
-        imagen: "https://picsum.photos/400/200?random=13",
+        duration: "3 meses",
+        image: "https://picsum.photos/400/200?random=13",
         isPopular: false,
       },
       {
         id: "corte-degradado",
-        nombre: "Corte Degradado",
-        descripcion:
+        name: "Corte Degradado",
+        description:
           "Domina la técnica de corte degradado, adaptado tanto para hombres como mujeres.",
-        duracion: "2 meses",
-        imagen: "https://picsum.photos/400/200?random=14",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=14",
         isPopular: false,
       },
       {
         id: "peinados-de-boda",
-        nombre: "Peinados de Boda",
-        descripcion:
+        name: "Peinados de Boda",
+        description:
           "Aprende a realizar peinados elegantes y sofisticados para novias y ocasiones especiales.",
-        duracion: "1 mes",
-        imagen: "https://picsum.photos/400/200?random=15",
+        duration: "1 mes",
+        image: "https://picsum.photos/400/200?random=15",
         isPopular: true,
       },
       {
         id: "corte-y-coloracion-unisex",
-        nombre: "Corte y Coloración Unisex",
-        descripcion:
+        name: "Corte y Coloración Unisex",
+        description:
           "Curso integral que combina técnicas de corte y coloración para ambos géneros.",
-        duracion: "4 meses",
-        imagen: "https://picsum.photos/400/200?random=16",
+        duration: "4 meses",
+        image: "https://picsum.photos/400/200?random=16",
         isPopular: false,
       },
       {
         id: "corte-y-peinado-hombre",
-        nombre: "Corte y Peinado de Hombre",
-        descripcion:
+        name: "Corte y Peinado de Hombre",
+        description:
           "Especialízate en cortes y peinados masculinos, desde los más clásicos hasta los más modernos.",
-        duracion: "2 meses",
-        imagen: "https://picsum.photos/400/200?random=17",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=17",
         isPopular: false,
       },
     ],
@@ -198,41 +198,41 @@ const courses = {
     ],
     banner: bannerTest,
     btn_color: "bg-pink-700",
-    cursos: [
+    courses: [
       {
         id: "maquillaje-basico",
-        nombre: "Maquillaje Básico",
-        descripcion:
+        name: "Maquillaje Básico",
+        description:
           "Curso introductorio para aprender técnicas básicas de maquillaje y cuidado de la piel.",
-        duracion: "2 meses",
-        imagen: "https://picsum.photos/400/200?random=20",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=20",
         isPopular: true,
       },
       {
         id: "maquillaje-de-ojos",
-        nombre: "Maquillaje de Ojos",
-        descripcion:
+        name: "Maquillaje de Ojos",
+        description:
           "Especialízate en las técnicas de maquillaje de ojos, desde lo más sencillo hasta lo más elaborado.",
-        duracion: "1 mes",
-        imagen: "https://picsum.photos/400/200?random=21",
+        duration: "1 mes",
+        image: "https://picsum.photos/400/200?random=21",
         isPopular: false,
       },
       {
         id: "maquillaje-de-noche",
-        nombre: "Maquillaje de Noche",
-        descripcion:
+        name: "Maquillaje de Noche",
+        description:
           "Aprende las técnicas para un maquillaje de noche perfecto, ideal para eventos especiales.",
-        duracion: "1 mes",
-        imagen: "https://picsum.photos/400/200?random=22",
+        duration: "1 mes",
+        image: "https://picsum.photos/400/200?random=22",
         isPopular: true,
       },
       {
         id: "maquillaje-de-boda",
-        nombre: "Maquillaje de Boda",
-        descripcion:
+        name: "Maquillaje de Boda",
+        description:
           "Curso especializado en técnicas de maquillaje para novias, que incluye los mejores consejos y trucos.",
-        duracion: "1 mes",
-        imagen: "https://picsum.photos/400/200?random=23",
+        duration: "1 mes",
+        image: "https://picsum.photos/400/200?random=23",
         isPopular: false,
       },
     ],
@@ -252,23 +252,23 @@ const courses = {
     ],
     banner: bannerTest,
     btn_color: "bg-purple-700",
-    cursos: [
+    courses: [
       {
         id: "faciales",
-        nombre: "Tratamientos Faciales",
-        descripcion:
+        name: "Tratamientos Faciales",
+        description:
           "Curso especializado en tratamientos faciales y rejuvenecimiento, incluyendo técnicas antiarrugas y exfoliación.",
-        duracion: "2 meses",
-        imagen: "https://picsum.photos/400/200?random=26",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=26",
         isPopular: true,
       },
       {
         id: "depilacion",
-        nombre: "Depilación con Cera",
-        descripcion:
+        name: "Depilación con Cera",
+        description:
           "Aprende a realizar depilaciones con cera, técnicas para una depilación perfecta y duradera.",
-        duracion: "1 mes",
-        imagen: "https://picsum.photos/400/200?random=27",
+        duration: "1 mes",
+        image: "https://picsum.photos/400/200?random=27",
         isPopular: false,
       },
     ],
@@ -288,32 +288,32 @@ const courses = {
     ],
     banner: bannerTest,
     btn_color: "bg-teal-700",
-    cursos: [
+    courses: [
       {
         id: "manicure",
-        nombre: "Manicure Profesional",
-        descripcion:
+        name: "Manicure Profesional",
+        description:
           "Curso completo de manicure profesional, incluyendo técnicas de esmaltado, diseño y cuidado de las uñas.",
-        duracion: "2 meses",
-        imagen: "https://picsum.photos/400/200?random=30",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=30",
         isPopular: true,
       },
       {
         id: "pedicure",
-        nombre: "Pedicure Profesional",
-        descripcion:
+        name: "Pedicure Profesional",
+        description:
           "Especialízate en el cuidado y tratamiento de los pies, incluye técnicas de pedicure y diseño de uñas.",
-        duracion: "1 mes",
-        imagen: "https://picsum.photos/400/200?random=31",
+        duration: "1 mes",
+        image: "https://picsum.photos/400/200?random=31",
         isPopular: false,
       },
       {
         id: "diseño-de-unas",
-        nombre: "Diseño de Uñas",
-        descripcion:
+        name: "Diseño de Uñas",
+        description:
           "Curso de diseño avanzado de uñas, desde el arte simple hasta las tendencias más innovadoras.",
-        duracion: "2 meses",
-        imagen: "https://picsum.photos/400/200?random=32",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=32",
         isPopular: true,
       },
     ],

@@ -19,10 +19,10 @@ function App() {
           <Route path="noticias" element={<NoticesPage />} />
           <Route path="mi-campus" element={<MiCampus />} />
 
-          <Route path="/cursos/:categoria" element={<CourseDetails />} />
-          <Route path="/cursos/:categoria/:id" element={<CursoInfo />} />
+          <Route path="/cursos/:category" element={<CourseDetails />} />
+          <Route path="/cursos/:category/:id" element={<CursoInfo />} />
 
-          <Route path="/cursos/:categoria/:id" element={<CursoInfo />} />
+          <Route path="/cursos/:category/:id" element={<CursoInfo />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Route>
