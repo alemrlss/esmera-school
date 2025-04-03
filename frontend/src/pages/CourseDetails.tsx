@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom";
 import courses from "../data/courses"; // Asumo que los cursos están en un archivo de datos
 import CourseList from "../components/Courses/CourseList"; // Componente que ya lista los cursos
 import { useRef } from "react";
-import { Award, Scissors, Briefcase, User } from "lucide-react"; // Importamos los íconos de lucide-react
+import Course from "../types/Course";
+import { Award } from "lucide-react";
 
 // Tipado para la categoría de cursos
 interface CourseCategory {
@@ -11,35 +12,13 @@ interface CourseCategory {
   title: string;
   description_html: string;
   btn_color: string;
-  courses: any[]; // Aquí puedes poner el tipo adecuado de curso
+  benefits?: {
+    icon: JSX.Element; // Usamos JSX.Element para los íconos
+    title: string;
+    description: string;
+  }[];
+  courses: Course[]; // Aquí puedes poner el tipo adecuado de curso
 }
-
-const benefits: any[] = [
-  {
-    icon: <Award className="w-8 h-8 text-teal-500" />, // Icono de reconocimiento
-    title: "Alta demanda laboral",
-    description:
-      "Los servicios de barbería están en constante crecimiento, con muchas oportunidades laborales tanto en salones como de forma independiente.",
-  },
-  {
-    icon: <Scissors className="w-8 h-8 text-teal-500" />, // Icono de tijeras
-    title: "Habilidades prácticas",
-    description:
-      "Desarrolla habilidades en técnicas modernas de corte, afeitado y diseño de barba, con entrenamiento práctico.",
-  },
-  {
-    icon: <Briefcase className="w-8 h-8 text-teal-500" />, // Icono de maletín
-    title: "Emprendimiento",
-    description:
-      "Puedes emprender tu propio negocio de barbería, crear una marca personal y ofrecer servicios únicos.",
-  },
-  {
-    icon: <User className="w-8 h-8 text-teal-500" />, // Icono de usuario
-    title: "Conexión con el cliente",
-    description:
-      "Desarrolla una relación cercana con tus clientes, mejorando la fidelidad y creando una comunidad alrededor de tu barbería.",
-  },
-];
 
 const CourseDetails = () => {
   const { category } = useParams<{ category: string }>(); // Tipamos useParams
@@ -111,18 +90,24 @@ const CourseDetails = () => {
       <div className="py-8 mt-8">
         <div className="container mx-auto px-4 text-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-0 lg:mx-16">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md space-y-4"
-              >
-                <div className="mb-4">{benefit.icon}</div>
-                <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-                <p className="text-gray-600 text-sm text-center">
-                  {benefit.description}
-                </p>
-              </div>
-            ))}
+            {categoryData.benefits?.map((benefit, index) => {
+              return (
+                <div
+                  key={index}
+                  className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md space-y-4"
+                >
+                  <div>
+                    <Award className="w-12 h-12 text-blue-500" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm text-center">
+                    {benefit.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

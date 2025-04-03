@@ -1,4 +1,4 @@
-import bannerTest from "../assets/banners/prueba-a.png";
+import bannerTest from "../assets/banners/banner_estetica.png";
 import bannerBarberia from "../assets/cursos/banner-barberia.png";
 
 import bannerMobileBarberia from "../assets/test/movil.png";
@@ -6,26 +6,74 @@ import bannerDesktopBarberia from "../assets/test/desktop.png";
 
 import bannerMobilePeluqueria from "../assets/test/peluqueria-mobile.png";
 import bannerDesktopPeluqueria from "../assets/test/peluqueria-desktop.png";
+import { Award } from "lucide-react";
+interface Benefit {
+  title: string;
+  description: string;
+}
 
-const courses = {
+// Tipo para un curso
+interface Course {
+  id: string;
+  name: string;
+  description: string;
+  duration: string;
+  image: string;
+  isPopular: boolean;
+  image2: string;
+  offersYou: string;
+  targetAudience: string;
+  temary: string[];
+  outputs: string[];
+  relatedCourses: string[];
+}
+interface Category {
+  title: string;
+  bannerMobile: string;
+  bannerDesktop: string;
+  description_html: string;
+  images: string[];
+  banner: string;
+  btn_color: string;
+  benefits: Benefit[];
+  courses: Course[]; // Lista de cursos dentro de cada categoría
+}
+
+interface Categories {
+  barberia: Category;
+  estetica: Category;
+  peluqueria: Category;
+  unas: Category;
+  maquillaje: Category;
+  // Puedes agregar más categorías aquí
+}
+
+const courses: Categories = {
   barberia: {
     title: "Cursos de Barbería",
     bannerMobile: bannerMobileBarberia,
     bannerDesktop: bannerDesktopBarberia,
     description_html: `
-        <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
-          Transforma tu pasión por la belleza en una <strong>carrera profesional</strong> con la 
-          <span class="font-semibold">Escuela de Estética de Esmera School</span>. 
-          Aprende las <strong>últimas técnicas</strong>, innova y destaca en el dinámico mundo de la estética. 
-          ¡<span class=" font-bold">Empieza tu viaje hacia el éxito</span> con nosotros!
-        </p>
-      `,
+          <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
+            Transforma tu pasión por la belleza en una <strong>carrera profesional</strong> con la 
+            <span class="font-semibold">Escuela de Estética de Esmera School</span>. 
+            Aprende las <strong>últimas técnicas</strong>, innova y destaca en el dinámico mundo de la estética. 
+            ¡<span class=" font-bold">Empieza tu viaje hacia el éxito</span> con nosotros!
+          </p>
+        `,
     images: [
       "https://picsum.photos/1200/400",
       "https://picsum.photos/1200/400",
     ],
     banner: bannerBarberia,
     btn_color: "bg-blue-700",
+    benefits: [
+      {
+        title: "Alta demanda laboral",
+        description:
+          "Los servicios de barbería están en constante crecimiento, con muchas oportunidades laborales tanto en salones como de forma independiente.",
+      },
+    ],
     courses: [
       {
         id: "corte-barba",
@@ -35,7 +83,7 @@ const courses = {
         duration: "1 mes",
         image: "https://picsum.photos/400/200?random=1",
         isPopular: true,
-        image2: bannerTest, // Imagen para el curso
+        image2: bannerDesktopPeluqueria, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
         targetAudience:
@@ -51,6 +99,11 @@ const courses = {
           "Emprendimiento: abre tu propia barbería",
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "corte-creativo",
         ],
       },
       {
@@ -78,6 +131,11 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-femenino",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
+        ],
       },
       {
         id: "corte-femenino",
@@ -103,6 +161,11 @@ const courses = {
           "Emprendimiento: abre tu propia barbería",
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "corte-degradado",
+          "peinados-especiales",
+          "tendencias-2025",
         ],
       },
       {
@@ -130,6 +193,11 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-femenino",
+          "corte-y-peinado-de-hombre",
+          "coloracion-capilar",
+        ],
       },
       {
         id: "coloracion-capilar",
@@ -155,6 +223,11 @@ const courses = {
           "Emprendimiento: abre tu propia barbería",
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "peinados-especiales",
+          "corte-femenino",
+          "corte-creativo",
         ],
       },
       {
@@ -182,6 +255,11 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "corte-creativo",
+        ],
       },
       {
         id: "tendencias-2025",
@@ -208,6 +286,7 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: ["corte-degradado", "corte-femenino", "corte-creativo"],
       },
       {
         id: "corte-creativo",
@@ -234,6 +313,11 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
+        ],
       },
       {
         id: "corte-y-peinado-de-hombre",
@@ -259,6 +343,11 @@ const courses = {
           "Emprendimiento: abre tu propia barbería",
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-femenino",
+          "barberia-para-principiantes",
         ],
       },
     ],
@@ -305,6 +394,11 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
+        ],
       },
       {
         id: "coloracion-avanzada",
@@ -330,6 +424,11 @@ const courses = {
           "Emprendimiento: abre tu propia barbería",
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
         ],
       },
       {
@@ -357,6 +456,11 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
+        ],
       },
       {
         id: "peinados-de-boda",
@@ -382,6 +486,11 @@ const courses = {
           "Emprendimiento: abre tu propia barbería",
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
         ],
       },
       {
@@ -409,6 +518,11 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
+        ],
       },
       {
         id: "corte-y-peinado-hombre",
@@ -435,10 +549,24 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
+        ],
+      },
+    ],
+    benefits: [
+      {
+        title: "Alta demanda laboral",
+        description:
+          "Los servicios de barbería están en constante crecimiento, con muchas oportunidades laborales tanto en salones como de forma independiente.",
       },
     ],
   },
   maquillaje: {
+    benefits: [],
+
     title: "Academia de Maquillaje",
     bannerMobile: bannerMobilePeluqueria,
     bannerDesktop: bannerDesktopPeluqueria,
@@ -479,6 +607,11 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
+        ],
       },
       {
         id: "maquillaje-de-ojos",
@@ -504,6 +637,11 @@ const courses = {
           "Emprendimiento: abre tu propia barbería",
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
         ],
       },
       {
@@ -531,6 +669,11 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
+        ],
       },
       {
         id: "maquillaje-de-boda",
@@ -557,10 +700,17 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
+        ],
       },
     ],
   },
   estetica: {
+    benefits: [],
+
     title: "Academia de Estética",
     bannerMobile: bannerMobilePeluqueria,
     bannerDesktop: bannerDesktopPeluqueria,
@@ -601,6 +751,11 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
+        ],
       },
       {
         id: "depilacion",
@@ -627,10 +782,16 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
+        ],
       },
     ],
   },
   unas: {
+    benefits: [],
     title: "Academia de Uñas",
     bannerMobile: bannerMobilePeluqueria,
     bannerDesktop: bannerDesktopPeluqueria,
@@ -671,6 +832,11 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
+        ],
       },
       {
         id: "pedicure",
@@ -697,6 +863,11 @@ const courses = {
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
         ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
+        ],
       },
       {
         id: "diseño-de-unas",
@@ -722,6 +893,11 @@ const courses = {
           "Emprendimiento: abre tu propia barbería",
           "Asesoría de imagen personal",
           "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "corte-degradado",
+          "corte-y-peinado-de-hombre",
+          "tendencias-2025",
         ],
       },
     ],

@@ -1,36 +1,35 @@
 import { useState } from "react";
-import bannerTest from "../assets/banners/banner.png";
 import { CheckCircle } from "lucide-react";
+import { useParams } from "react-router-dom";
+import courses from "../data/courses";
+import useGoToPage from "../hooks/useGoToPage";
 
 const CourseInfo = () => {
-  const course = {
-    title: "Curso Profesional de Barbería Internacional",
-    description:
-      "Conviértete en un experto en barbería con formación de nivel internacional. Obtén tu certificación y abre las puertas a nuevas oportunidades laborales en cualquier parte del mundo.",
-    offersYou:
-      "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
-    targetAudience:
-      "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
-    temary: [
-      "Módulo 1: Fundamentos de la Barbería",
-      "Módulo 2: Técnicas de Corte y Afeitado",
-      "Módulo 3: Estilos Modernos y Clásicos",
-      "Módulo 4: Gestión de una Barbería",
-    ],
-    outputs: [
-      "Trabajo en barberías internacionales",
-      "Emprendimiento: abre tu propia barbería",
-      "Asesoría de imagen personal",
-      "Formador para nuevos barberos",
-    ],
-    image: bannerTest, // Imagen para el curso
-  };
+  const goToPage = useGoToPage(); // Usa el hook
+
+  const { category, id } = useParams<{ category: string; id: string }>();
+  const categoryData = courses[category as keyof typeof courses];
+  const course = categoryData?.courses?.find((c) => c.id === id);
 
   const [formData, setFormData] = useState({
     nombre: "",
     telefono: "",
     correo: "",
   });
+
+  const relatedCourses = course?.relatedCourses?.map((relatedId) =>
+    categoryData?.courses?.find((c) => c.id === relatedId)
+  );
+
+  if (!course) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="d-alert d-alert-error w-96">
+          <span className="text-xl">Curso no encontrado</span>
+        </div>
+      </div>
+    );
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
@@ -44,12 +43,14 @@ const CourseInfo = () => {
     console.log("Formulario enviado:", formData); // Imprimir los datos del formulario
   };
 
+  console.log(course);
+
   return (
     <div className="min-h-screen flex flex-col items-center bg-gray-50">
       <section
         className="w-full h-96 text-white flex flex-col items-center justify-center relative mb-12"
         style={{
-          backgroundImage: `url(${course.image})`,
+          backgroundImage: `url(${course.image2})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -58,7 +59,7 @@ const CourseInfo = () => {
         <div className="relative w-full max-w-4xl pl-12">
           <h1 className="text-5xl font-extrabold mb-4 text-left">
             <span className="text-white text-3xl">Curso de</span> <br />
-            <span className="text-5xl">Barbería Internacional</span>
+            <span className="text-5xl">{course.name}</span>
           </h1>
 
           {/* Viñetas con ícono de check */}
@@ -94,7 +95,7 @@ const CourseInfo = () => {
         {/* Columna izquierda: Información del curso */}
         <div className="space-y-6 flex-1">
           <h2 className="text-3xl font-semibold text-gray-800">
-            {course.title}
+            {course.name}
           </h2>
           <p className="text-lg text-gray-700">{course.description}</p>
 
@@ -216,29 +217,39 @@ const CourseInfo = () => {
           Cursos relacionados
         </h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3].map((id) => (
-            <div
-              key={id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
-            >
-              <img
-                src={`https://picsum.photos/400/250?random=${id}`}
-                alt="Curso relacionado"
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold text-gray-800">
-                  Curso Avanzado {id}
-                </h3>
-                <p className="text-gray-600 text-sm mt-2">
-                  Curso especializado para mejorar tus habilidades.
-                </p>
-                <button className="w-full py-2 mt-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 cursor-pointer">
-                  Más información
-                </button>
-              </div>
-            </div>
-          ))}
+          {relatedCourses?.map(
+            (related) =>
+              related && (
+                <div
+                  key={related.id}
+                  className="bg-white rounded-lg shadow-lg overflow-hidden"
+                >
+                  <img
+                    src={related.image} // Usamos la imagen que ya tiene el curso
+                    alt={`Curso relacionado: ${related.name}`}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-4">
+                    <h3 className="text-xl font-semibold text-gray-800">
+                      {related.name}{" "}
+                      {/* Mostramos el nombre del curso relacionado */}
+                    </h3>
+                    <p className="text-gray-600 text-sm mt-2">
+                      {related.description}{" "}
+                      {/* Mostramos la descripción del curso */}
+                    </p>
+                    <button
+                      onClick={() =>
+                        goToPage(`/cursos/${category}/${related.id}`)
+                      } // Redirige al curso con el id relacionado
+                      className="w-full py-2 mt-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 cursor-pointer"
+                    >
+                      Más información
+                    </button>
+                  </div>
+                </div>
+              )
+          )}
         </div>
       </section>
 
