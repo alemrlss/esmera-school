@@ -109,16 +109,18 @@ const CourseDetails = () => {
         </div>
       </div>
       <div className="py-8 mt-8">
-        <div className="container mx-auto text-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="container mx-auto px-4 text-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-0 lg:mx-16">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center p-6 mx-12 lg:mx-0 bg-white rounded-lg shadow-md space-y-4"
+                className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md space-y-4"
               >
                 <div className="mb-4">{benefit.icon}</div>
                 <h3 className="text-lg font-semibold mb-2">{benefit.title}</h3>
-                <p className="text-gray-600 text-sm">{benefit.description}</p>
+                <p className="text-gray-600 text-sm text-center">
+                  {benefit.description}
+                </p>
               </div>
             ))}
           </div>

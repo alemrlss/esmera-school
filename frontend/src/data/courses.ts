@@ -35,6 +35,23 @@ const courses = {
         duration: "1 mes",
         image: "https://picsum.photos/400/200?random=1",
         isPopular: true,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "corte-degradado",
@@ -44,6 +61,23 @@ const courses = {
         duration: "2 meses",
         image: "https://picsum.photos/400/200?random=2",
         isPopular: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "corte-femenino",
@@ -53,6 +87,23 @@ const courses = {
         duration: "2 meses",
         image: "https://picsum.photos/400/200?random=3",
         isPopular: true,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "peinados-especiales",
@@ -62,6 +113,23 @@ const courses = {
         duration: "1 mes",
         image: "https://picsum.photos/400/200?random=4",
         isPopular: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "coloracion-capilar",
@@ -71,6 +139,23 @@ const courses = {
         duration: "3 meses",
         image: "https://picsum.photos/400/200?random=5",
         isPopular: true,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "barberia-para-principiantes",
@@ -80,6 +165,23 @@ const courses = {
         duration: "1 mes",
         image: "https://picsum.photos/400/200?random=6",
         isPopular: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "tendencias-2025",
@@ -89,6 +191,23 @@ const courses = {
         duration: "2 meses",
         image: "https://picsum.photos/400/200?random=7",
         isPopular: true,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "corte-creativo",
@@ -98,6 +217,23 @@ const courses = {
         duration: "3 meses",
         image: "https://picsum.photos/400/200?random=8",
         isPopular: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "corte-y-peinado-de-hombre",
@@ -107,6 +243,23 @@ const courses = {
         duration: "2 meses",
         image: "https://picsum.photos/400/200?random=9",
         isPopular: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
     ],
   },
@@ -135,6 +288,23 @@ const courses = {
         duration: "3 meses",
         image: "https://picsum.photos/400/200?random=12",
         isPopular: true,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "coloracion-avanzada",
@@ -144,6 +314,23 @@ const courses = {
         duration: "3 meses",
         image: "https://picsum.photos/400/200?random=13",
         isPopular: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "corte-degradado",
@@ -153,6 +340,23 @@ const courses = {
         duration: "2 meses",
         image: "https://picsum.photos/400/200?random=14",
         isPopular: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "peinados-de-boda",
@@ -162,6 +366,23 @@ const courses = {
         duration: "1 mes",
         image: "https://picsum.photos/400/200?random=15",
         isPopular: true,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "corte-y-coloracion-unisex",
@@ -171,6 +392,23 @@ const courses = {
         duration: "4 meses",
         image: "https://picsum.photos/400/200?random=16",
         isPopular: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "corte-y-peinado-hombre",
@@ -180,6 +418,23 @@ const courses = {
         duration: "2 meses",
         image: "https://picsum.photos/400/200?random=17",
         isPopular: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
     ],
   },
@@ -207,6 +462,23 @@ const courses = {
         duration: "2 meses",
         image: "https://picsum.photos/400/200?random=20",
         isPopular: true,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "maquillaje-de-ojos",
@@ -216,6 +488,23 @@ const courses = {
         duration: "1 mes",
         image: "https://picsum.photos/400/200?random=21",
         isPopular: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "maquillaje-de-noche",
@@ -225,6 +514,23 @@ const courses = {
         duration: "1 mes",
         image: "https://picsum.photos/400/200?random=22",
         isPopular: true,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "maquillaje-de-boda",
@@ -234,6 +540,23 @@ const courses = {
         duration: "1 mes",
         image: "https://picsum.photos/400/200?random=23",
         isPopular: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
     ],
   },
@@ -261,6 +584,23 @@ const courses = {
         duration: "2 meses",
         image: "https://picsum.photos/400/200?random=26",
         isPopular: true,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "depilacion",
@@ -270,6 +610,23 @@ const courses = {
         duration: "1 mes",
         image: "https://picsum.photos/400/200?random=27",
         isPopular: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
     ],
   },
@@ -297,6 +654,23 @@ const courses = {
         duration: "2 meses",
         image: "https://picsum.photos/400/200?random=30",
         isPopular: true,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "pedicure",
@@ -306,6 +680,23 @@ const courses = {
         duration: "1 mes",
         image: "https://picsum.photos/400/200?random=31",
         isPopular: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
       {
         id: "diseño-de-unas",
@@ -315,6 +706,23 @@ const courses = {
         duration: "2 meses",
         image: "https://picsum.photos/400/200?random=32",
         isPopular: true,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
       },
     ],
   },
