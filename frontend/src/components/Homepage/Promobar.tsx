@@ -1,5 +1,6 @@
-import { ArrowRight, X } from "lucide-react"; // Importa los iconos de flecha y de cierre
 import { useState } from "react";
+import { FaArrowRight } from "react-icons/fa";
+import { FaX } from "react-icons/fa6";
 
 function PromoBar() {
   const [isVisible, setIsVisible] = useState(true); // Estado para mostrar/ocultar la barra
@@ -25,7 +26,7 @@ function PromoBar() {
         {/* Botón (badge) de apuntarse a la derecha */}
         <button className="bg-yellow-500 text-white py-1 px-4 sm:px-6 rounded-lg hover:bg-yellow-600 hover:text-white focus:outline-none focus:ring-4 focus:ring-yellow-300 transition duration-300 font-semibold flex items-center space-x-2 mt-2 sm:mt-0 ml-0 sm:ml-4">
           <span>Apuntarme</span>
-          <ArrowRight size={20} />
+          <FaArrowRight size={20} />
         </button>
       </div>
 
@@ -35,7 +36,7 @@ function PromoBar() {
         className="absolute top-2 right-4 text-white text-2xl cursor-pointer hover:text-red-700 focus:outline-none transition duration-300"
         aria-label="Cerrar"
       >
-        <X />
+        <FaX />
       </button>
     </div>
   );

@@ -1,6 +1,6 @@
-import { Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom"; // Importamos Link desde react-router-dom
-import logo from "../assets/logo-esmera.png"; // Asegúrate de poner la ruta correcta de tu imagen
+import logo from "../assets/logos/logo-esmera.png"; // Asegúrate de poner la ruta correcta de tu imagen
+import { FaMapMarkerAlt, FaPhone } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -15,14 +15,11 @@ function Footer() {
               <Link to="/" className="d-link d-link-hover text-center">
                 Conoce Esmera
               </Link>
-              <Link to="/opiniones" className="d-link d-link-hover text-center">
-                Opiniones
-              </Link>
               <Link to="/contacto" className="d-link d-link-hover text-center">
                 Contacto
               </Link>
               <Link to="/noticias" className="d-link d-link-hover text-center">
-                Blog
+                Noticias
               </Link>
             </div>
           </nav>
@@ -46,7 +43,7 @@ function Footer() {
                 href="tel:912795975"
                 className="d-btn d-btn-ghost flex items-center px-6 py-2 rounded-full font-medium hover:bg-[#0057a8] hover:text-white transition duration-300 ease-in-out"
               >
-                <Phone className="h-5 w-5 mr-2" />
+                <FaPhone className="h-5 w-5 mr-2" />
                 912 79 59 75
               </a>
             </div>
@@ -57,7 +54,7 @@ function Footer() {
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-gray-500 font-bold hover:underline lg:hidden"
             >
-              <MapPin className="h-6 w-6" />
+              <FaMapMarkerAlt  className="h-6 w-6" />
               <span>Visítanos en Paseo Santa Maria de la Cabeza, 10</span>
             </a>
           </div>
@@ -71,7 +68,7 @@ function Footer() {
             rel="noopener noreferrer"
             className="flex items-center text-center space-x-2 text-gray-500 font-bold hover:underline"
           >
-            <MapPin className="h-6 w-6" />
+            <FaMapMarkerAlt  className="h-6 w-6" />
             <span>Visítanos en Paseo Santa Maria de la Cabeza, 10</span>
           </a>
           <iframe

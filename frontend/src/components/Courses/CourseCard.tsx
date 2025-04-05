@@ -5,7 +5,7 @@ interface Course {
   id: string;
   image: string;
   name: string;
-  isPopular: boolean;
+  isInternational: boolean;
 }
 
 // Definimos la interfaz para las props del componente
@@ -30,11 +30,10 @@ const CourseCard = ({ category, course }: CourseCardProps) => {
           {/* Fondo oscuro con efecto sutil */}
           <div className="absolute inset-0 bg-black opacity-30 hover:opacity-40 transition-all"></div>
 
-          {/* Etiqueta 'OFERTA' en la esquina superior izquierda */}
-          {course.isPopular && (
-            <span className="absolute top-3 left-3 bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-lg shadow-md">
-              OFERTA
-            </span>
+          {course.isInternational && (
+            <div className="bg-[#008e47] absolute transform -rotate-45 text-center text-white font-semibold py-1 left-[-34px] top-[32px] w-[170px]">
+              Internacional
+            </div>
           )}
 
           {/* Contenido de la tarjeta */}

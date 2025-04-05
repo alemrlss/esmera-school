@@ -1,11 +1,11 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useState, useEffect } from "react";
-import imagenDesktop1 from "../assets/homepage/1.png";
-import imagenDesktop2 from "../assets/homepage/2.png";
-import imagenDesktop3 from "../assets/homepage/3.png";
-import imageMobile1 from "../assets/homepage/1-mobile.png";
-import imageMobile2 from "../assets/homepage/2-mobile.png";
-import imageMobile3 from "../assets/homepage/3-mobile.png";
+import imagenDesktop1 from "../assets/homepage/carousel/1.png";
+import imagenDesktop2 from "../assets/homepage/carousel/2.png";
+import imagenDesktop3 from "../assets/homepage/carousel/3.png";
+import imageMobile1 from "../assets/homepage/carousel/1-mobile.png";
+import imageMobile2 from "../assets/homepage/carousel/2-mobile.png";
+import imageMobile3 from "../assets/homepage/carousel/3-mobile.png";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function Carousel() {
   // Imágenes para mobile y desktop
@@ -134,20 +134,20 @@ function Carousel() {
                 className="w-full h-full object-contain"
                 alt={`Slide ${slide.id}`}
                 draggable={false}
-                />
+              />
             </div>
           ))}
         </div>
         <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
           {slides.map((slide, index) => (
             <button
-            key={slide.id}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer ${
-              currentIndex === index ? "bg-white" : "bg-gray-500"
+              key={slide.id}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full cursor-pointer ${
+                currentIndex === index ? "bg-white" : "bg-gray-500"
               }`}
-              />
-            ))}
+            />
+          ))}
         </div>
         {/* Flechas de navegación solo en desktop */}
         {!isMobile && (
@@ -156,13 +156,13 @@ function Carousel() {
               onClick={handlePrev}
               className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full md:flex hidden cursor-pointer"
             >
-              <ChevronLeft size={24} />
+              <FaChevronLeft size={24} />
             </button>
             <button
               onClick={handleNext}
               className="absolute right-4 top-1/2 transform -translate-y-1/2  text-white p-2 rounded-full md:flex hidden cursor-pointer"
             >
-              <ChevronRight size={24} />
+              <FaChevronRight size={24} />
             </button>
           </>
         )}

@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { CheckCircle } from "lucide-react";
 import { useParams } from "react-router-dom";
 import courses from "../data/courses";
 import useGoToPage from "../hooks/useGoToPage";
-
+import amistadImage from "../assets/values/amistad.png";
+import liderazgoImage from "../assets/values/liderazgo.png";
+import servicioImage from "../assets/values/servicio.png";
+import profesionalImage from "../assets/values/profesional.png";
+import { FaCheckCircle } from "react-icons/fa";
 const CourseInfo = () => {
   const goToPage = useGoToPage(); // Usa el hook
 
@@ -43,8 +46,6 @@ const CourseInfo = () => {
     console.log("Formulario enviado:", formData); // Imprimir los datos del formulario
   };
 
-  console.log(course);
-
   return (
     <div className="min-h-screen flex flex-col items-center bg-gray-50">
       <section
@@ -65,11 +66,11 @@ const CourseInfo = () => {
           {/* Viñetas con ícono de check */}
           <div className="flex flex-col items-start mb-6">
             <h3 className="text-sm sm:text-base md:text-lg font-semibold text-left mb-2">
-              <CheckCircle className="w-5 h-5 text-white inline-block mr-2" />
+              <FaCheckCircle className="w-5 h-5 text-white inline-block mr-2" />
               Formación Profesional
             </h3>
             <h3 className="text-sm sm:text-base md:text-lg font-semibold text-left">
-              <CheckCircle className="w-5 h-5 text-white inline-block mr-2" />
+              <FaCheckCircle className="w-5 h-5 text-white inline-block mr-2" />
               Garantizamos tu futuro
             </h3>
           </div>
@@ -257,12 +258,32 @@ const CourseInfo = () => {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8">
           NUESTROS VALORES
         </h2>
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 w-full">
-          {/* Card 1 */}
+        <div className="flex flex-wrap justify-center items-center gap-20 my-10">
+          {/* Amistad */}
           <div
-            className="relative rounded-tl-lg rounded-tr-4xl rounded-br-lg overflow-hidden"
+            className="relative rounded-tl-lg rounded-tr-3xl rounded-br-lg overflow-hidden"
             style={{
-              backgroundImage: "url('https://picsum.photos/300/300?1')",
+              backgroundImage: `url(${amistadImage})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              width: "200px",
+              height: "200px",
+            }}
+          >
+            <div className="absolute inset-0 bg-black opacity-40"></div>
+            <div className="relative p-6">
+              <h3 className="text-2xl font-semibold text-center border-b pb-2">
+                Amistad
+              </h3>
+              <p className="mt-4 text-xs">Fomentamos compañerismo y respeto.</p>
+            </div>
+          </div>
+
+          {/* Liderazgo */}
+          <div
+            className="relative rounded-tl-lg rounded-tr-3xl rounded-br-lg overflow-hidden"
+            style={{
+              backgroundImage: `url(${liderazgoImage})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               width: "220px",
@@ -271,20 +292,20 @@ const CourseInfo = () => {
           >
             <div className="absolute inset-0 bg-black opacity-40"></div>
             <div className="relative p-6">
-              <h3 className="text-lg font-semibold text-center border-b pb-2">
-                Compromiso con la Calidad
+              <h3 className="text-2xl font-semibold text-center border-b pb-2">
+                Liderazgo
               </h3>
               <p className="mt-4 text-xs">
-                Ofrecemos educación de la más alta calidad, transformando vidas.
+                Inspiramos el cambio y la innovación.
               </p>
             </div>
           </div>
 
-          {/* Card 2 */}
+          {/* Servicio */}
           <div
-            className="relative rounded-tl-lg rounded-tr-4xl rounded-br-lg overflow-hidden"
+            className="relative rounded-tl-lg rounded-tr-3xl rounded-br-lg overflow-hidden"
             style={{
-              backgroundImage: "url('https://picsum.photos/300/300?2')",
+              backgroundImage: `url(${servicioImage})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               width: "220px",
@@ -293,20 +314,20 @@ const CourseInfo = () => {
           >
             <div className="absolute inset-0 bg-black opacity-40"></div>
             <div className="relative p-6">
-              <h3 className="text-lg font-semibold text-center border-b pb-2">
-                Innovación Constante
+              <h3 className="text-2xl font-semibold text-center border-b pb-2">
+                Servicio
               </h3>
               <p className="mt-4 text-xs">
-                Siempre un paso adelante, adaptándonos a nuevas tendencias.
+                Atención y apoyo a cada estudiante.
               </p>
             </div>
           </div>
 
-          {/* Card 3 */}
+          {/* Excelencia Profesional */}
           <div
-            className="relative rounded-tl-lg rounded-tr-4xl rounded-br-lg overflow-hidden"
+            className="relative rounded-tl-lg rounded-tr-3xl rounded-br-lg overflow-hidden"
             style={{
-              backgroundImage: "url('https://picsum.photos/300/300?3')",
+              backgroundImage: `url(${profesionalImage})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               width: "220px",
@@ -315,34 +336,10 @@ const CourseInfo = () => {
           >
             <div className="absolute inset-0 bg-black opacity-40"></div>
             <div className="relative p-6">
-              <h3 className="text-lg font-semibold text-center border-b pb-2">
-                Enfoque Personalizado
-              </h3>
-              <p className="mt-4 text-xs">
-                Atención individualizada para apoyar a cada estudiante.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 4 */}
-          <div
-            className="relative rounded-tl-lg rounded-tr-4xl rounded-br-lg overflow-hidden"
-            style={{
-              backgroundImage: "url('https://picsum.photos/300/300?4')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              width: "220px",
-              height: "200px",
-            }}
-          >
-            <div className="absolute inset-0 bg-black opacity-40"></div>
-            <div className="relative p-6">
-              <h3 className="text-lg font-semibold text-center border-b pb-2">
+              <h3 className="text-2xl font-semibold text-center border-b pb-2">
                 Excelencia Profesional
               </h3>
-              <p className="mt-4 text-xs">
-                Formamos profesionales íntegros y preparados para el futuro.
-              </p>
+              <p className="mt-4 text-xs">Formamos profesionales íntegros.</p>
             </div>
           </div>
         </div>

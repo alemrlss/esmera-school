@@ -1,15 +1,28 @@
-import bannerTest from "../assets/banners/banner_estetica.png";
-import bannerBarberia from "../assets/cursos/banner-barberia.png";
+import bannerTest from "../assets/cursos/barberia/banner-movil.png";
+import bannerMobileBarberia from "../assets/cursos/barberia/banner-movil.png";
+import bannerDesktopBarberia from "../assets/cursos/barberia/banner.png";
 
-import bannerMobileBarberia from "../assets/test/movil.png";
-import bannerDesktopBarberia from "../assets/test/desktop.png";
-
-import bannerMobilePeluqueria from "../assets/test/peluqueria-mobile.png";
-import bannerDesktopPeluqueria from "../assets/test/peluqueria-desktop.png";
-import { Award } from "lucide-react";
+import bannerMobilePeluqueria from "../assets/cursos/peluqueria/banner-mobile.png";
+import bannerDesktopPeluqueria from "../assets/cursos/peluqueria/banner.png";
+import { IconType } from "react-icons";
+import {
+  FaBriefcase,
+  FaChartLine,
+  FaHeart,
+  FaHeartbeat,
+  FaLightbulb,
+  FaMagic,
+  FaPaintBrush,
+  FaPalette,
+  FaSmile,
+  FaStar,
+  FaUserTie,
+} from "react-icons/fa";
+import { FaScissors } from "react-icons/fa6";
 interface Benefit {
   title: string;
   description: string;
+  icon: IconType;
 }
 
 // Tipo para un curso
@@ -19,7 +32,7 @@ interface Course {
   description: string;
   duration: string;
   image: string;
-  isPopular: boolean;
+  isInternational: boolean;
   image2: string;
   offersYou: string;
   targetAudience: string;
@@ -32,9 +45,7 @@ interface Category {
   bannerMobile: string;
   bannerDesktop: string;
   description_html: string;
-  images: string[];
-  banner: string;
-  btn_color: string;
+  hex_color: string;
   benefits: Benefit[];
   courses: Course[]; // Lista de cursos dentro de cada categoría
 }
@@ -54,35 +65,49 @@ const courses: Categories = {
     bannerMobile: bannerMobileBarberia,
     bannerDesktop: bannerDesktopBarberia,
     description_html: `
-          <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
-            Transforma tu pasión por la belleza en una <strong>carrera profesional</strong> con la 
-            <span class="font-semibold">Escuela de Estética de Esmera School</span>. 
-            Aprende las <strong>últimas técnicas</strong>, innova y destaca en el dinámico mundo de la estética. 
-            ¡<span class=" font-bold">Empieza tu viaje hacia el éxito</span> con nosotros!
-          </p>
+        <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
+  Transforma tu pasión por el estilo y el cuidado personal en una <strong>carrera profesional</strong> con la 
+  <span class="font-semibold">Escuela de Barbería de Esmera School</span>. 
+  Aprende las <strong>técnicas más actuales</strong>, perfecciona tu talento y destaca en el vibrante mundo de la barbería moderna. 
+  ¡<sp class="font-bold">Comienza tu camino al éxito</sp  an> con nosotros!
+</p>
         `,
-    images: [
-      "https://picsum.photos/1200/400",
-      "https://picsum.photos/1200/400",
-    ],
-    banner: bannerBarberia,
-    btn_color: "bg-blue-700",
+    hex_color: "#3F51B5",
     benefits: [
       {
+        icon: FaScissors,
         title: "Alta demanda laboral",
         description:
-          "Los servicios de barbería están en constante crecimiento, con muchas oportunidades laborales tanto en salones como de forma independiente.",
+          "El sector de la barbería se encuentra en constante crecimiento, con una alta demanda de profesionales capacitados en salones y emprendimientos propios.",
+      },
+      {
+        icon: FaLightbulb,
+        title: "Creatividad y estilo",
+        description:
+          "La barbería te permite expresar creatividad en cada corte, adaptando estilos a las tendencias actuales y a las preferencias personales de tus clientes.",
+      },
+      {
+        icon: FaUserTie,
+        title: "Independencia laboral",
+        description:
+          "Convertirte en barbero te brinda la oportunidad de trabajar de forma independiente, gestionar tu propio negocio y tener mayor control sobre tu carrera profesional.",
+      },
+      {
+        icon: FaChartLine,
+        title: "Crecimiento profesional",
+        description:
+          "El campo de la barbería se actualiza constantemente, ofreciendo formación continua, especialización y oportunidades de crecimiento en el ámbito profesional.",
       },
     ],
     courses: [
       {
-        id: "corte-barba",
-        name: "Corte de Barba",
+        id: "master-internacional-barberia",
+        name: "Master Internacional de Barbería",
         description:
           "Aprende las técnicas más efectivas para el cuidado y diseño de la barba. Desde el afeitado tradicional hasta el arreglo moderno.",
         duration: "1 mes",
         image: "https://picsum.photos/400/200?random=1",
-        isPopular: true,
+        isInternational: true,
         image2: bannerDesktopPeluqueria, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -101,82 +126,20 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "corte-creativo",
+          "iniciacion-barberia",
+          "colorimetria",
+          "master-barberia",
         ],
       },
       {
-        id: "corte-degradado",
-        name: "Corte Degradado",
+        id: "master-barberia",
+        name: "Master en Barbería",
         description:
-          "Domina el arte del corte degradado, una de las técnicas más demandadas por los clientes modernos.",
-        duration: "2 meses",
-        image: "https://picsum.photos/400/200?random=2",
-        isPopular: false,
-        image2: bannerTest, // Imagen para el curso
-        offersYou:
-          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
-        targetAudience:
-          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
-        temary: [
-          "Módulo 1: Fundamentos de la Barbería",
-          "Módulo 2: Técnicas de Corte y Afeitado",
-          "Módulo 3: Estilos Modernos y Clásicos",
-          "Módulo 4: Gestión de una Barbería",
-        ],
-        outputs: [
-          "Trabajo en barberías internacionales",
-          "Emprendimiento: abre tu propia barbería",
-          "Asesoría de imagen personal",
-          "Formador para nuevos barberos",
-        ],
-        relatedCourses: [
-          "corte-femenino",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
-        ],
-      },
-      {
-        id: "corte-femenino",
-        name: "Corte Femenino",
-        description:
-          "Curso especializado en cortes de cabello para mujeres, técnicas de styling y cortes de tendencia.",
-        duration: "2 meses",
-        image: "https://picsum.photos/400/200?random=3",
-        isPopular: true,
-        image2: bannerTest, // Imagen para el curso
-        offersYou:
-          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
-        targetAudience:
-          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
-        temary: [
-          "Módulo 1: Fundamentos de la Barbería",
-          "Módulo 2: Técnicas de Corte y Afeitado",
-          "Módulo 3: Estilos Modernos y Clásicos",
-          "Módulo 4: Gestión de una Barbería",
-        ],
-        outputs: [
-          "Trabajo en barberías internacionales",
-          "Emprendimiento: abre tu propia barbería",
-          "Asesoría de imagen personal",
-          "Formador para nuevos barberos",
-        ],
-        relatedCourses: [
-          "corte-degradado",
-          "peinados-especiales",
-          "tendencias-2025",
-        ],
-      },
-      {
-        id: "peinados-especiales",
-        name: "Peinados Especiales",
-        description:
-          "Aprende a crear peinados únicos para eventos especiales: bodas, fiestas y más.",
+          "Aprende las técnicas más efectivas para el cuidado y diseño de la barba. Desde el afeitado tradicional hasta el arreglo moderno.",
         duration: "1 mes",
-        image: "https://picsum.photos/400/200?random=4",
-        isPopular: false,
-        image2: bannerTest, // Imagen para el curso
+        image: "https://picsum.photos/400/200?random=1",
+        isInternational: false,
+        image2: bannerDesktopPeluqueria, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
         targetAudience:
@@ -194,51 +157,20 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-femenino",
-          "corte-y-peinado-de-hombre",
-          "coloracion-capilar",
+          "master-internacional-barberia",
+          "iniciacion-barberia",
+          "colorimetria",
         ],
       },
       {
-        id: "coloracion-capilar",
-        name: "Coloración Capilar",
+        id: "iniciacion-barberia",
+        name: "Iniciación a la Barbería",
         description:
-          "Curso completo sobre técnicas de coloración de cabello, desde mechas hasta tintes complejos.",
-        duration: "3 meses",
-        image: "https://picsum.photos/400/200?random=5",
-        isPopular: true,
-        image2: bannerTest, // Imagen para el curso
-        offersYou:
-          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
-        targetAudience:
-          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
-        temary: [
-          "Módulo 1: Fundamentos de la Barbería",
-          "Módulo 2: Técnicas de Corte y Afeitado",
-          "Módulo 3: Estilos Modernos y Clásicos",
-          "Módulo 4: Gestión de una Barbería",
-        ],
-        outputs: [
-          "Trabajo en barberías internacionales",
-          "Emprendimiento: abre tu propia barbería",
-          "Asesoría de imagen personal",
-          "Formador para nuevos barberos",
-        ],
-        relatedCourses: [
-          "peinados-especiales",
-          "corte-femenino",
-          "corte-creativo",
-        ],
-      },
-      {
-        id: "barberia-para-principiantes",
-        name: "Barbería para Principiantes",
-        description:
-          "Conoce los fundamentos de la barbería, desde el afeitado clásico hasta cortes sencillos.",
+          "Aprende las técnicas más efectivas para el cuidado y diseño de la barba. Desde el afeitado tradicional hasta el arreglo moderno.",
         duration: "1 mes",
-        image: "https://picsum.photos/400/200?random=6",
-        isPopular: false,
-        image2: bannerTest, // Imagen para el curso
+        image: "https://picsum.photos/400/200?random=1",
+        isInternational: false,
+        image2: bannerDesktopPeluqueria, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
         targetAudience:
@@ -256,47 +188,20 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "corte-creativo",
+          "colorimetria",
+          "master-barberia",
+          "barberia-artistica",
         ],
       },
       {
-        id: "tendencias-2025",
-        name: "Tendencias 2025 en Corte y Estilo",
+        id: "colorimetria",
+        name: "Colorimetría",
         description:
-          "Curso que te prepara para las tendencias que dominarán el mundo de la barbería en los próximos años.",
-        duration: "2 meses",
-        image: "https://picsum.photos/400/200?random=7",
-        isPopular: true,
-        image2: bannerTest, // Imagen para el curso
-        offersYou:
-          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
-        targetAudience:
-          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
-        temary: [
-          "Módulo 1: Fundamentos de la Barbería",
-          "Módulo 2: Técnicas de Corte y Afeitado",
-          "Módulo 3: Estilos Modernos y Clásicos",
-          "Módulo 4: Gestión de una Barbería",
-        ],
-        outputs: [
-          "Trabajo en barberías internacionales",
-          "Emprendimiento: abre tu propia barbería",
-          "Asesoría de imagen personal",
-          "Formador para nuevos barberos",
-        ],
-        relatedCourses: ["corte-degradado", "corte-femenino", "corte-creativo"],
-      },
-      {
-        id: "corte-creativo",
-        name: "Corte Creativo",
-        description:
-          "Técnicas avanzadas de corte que permiten crear estilos únicos y personalizados para cada cliente.",
-        duration: "3 meses",
-        image: "https://picsum.photos/400/200?random=8",
-        isPopular: false,
-        image2: bannerTest, // Imagen para el curso
+          "Aprende las técnicas más efectivas para el cuidado y diseño de la barba. Desde el afeitado tradicional hasta el arreglo moderno.",
+        duration: "1 mes",
+        image: "https://picsum.photos/400/200?random=1",
+        isInternational: false,
+        image2: bannerDesktopPeluqueria, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
         targetAudience:
@@ -314,20 +219,20 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "master-internacional-barberia",
+          "barberia-artistica",
+          "master-barberia",
         ],
       },
       {
-        id: "corte-y-peinado-de-hombre",
-        name: "Corte y Peinado de Hombre",
+        id: "barberia-artistica",
+        name: "Barbería Artística",
         description:
-          "Especialízate en cortes y peinados para hombres, incluyendo estilos modernos y clásicos.",
-        duration: "2 meses",
-        image: "https://picsum.photos/400/200?random=9",
-        isPopular: false,
-        image2: bannerTest, // Imagen para el curso
+          "Aprende las técnicas más efectivas para el cuidado y diseño de la barba. Desde el afeitado tradicional hasta el arreglo moderno.",
+        duration: "1 mes",
+        image: "https://picsum.photos/400/200?random=1",
+        isInternational: false,
+        image2: bannerDesktopPeluqueria, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
         targetAudience:
@@ -345,38 +250,63 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-femenino",
-          "barberia-para-principiantes",
+          "master-internacional-barberia",
+          "colorimetria",
+          "master-barberia",
         ],
       },
     ],
   },
   peluqueria: {
-    title: "Academia de Peluquería",
+    title: "Cursos de Peluquería",
     bannerMobile: bannerMobilePeluqueria,
     bannerDesktop: bannerDesktopPeluqueria,
     description_html: `
-        <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
-          Desarrolla tus habilidades en cortes y colorimetría para convertirte en un <strong>experto en peluquería</strong>.
-          Aprende las <strong>últimas tendencias</strong> en cortes, peinados y técnicas de coloración para destacar en el mundo de la estética.
-        </p>
+     <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
+  Transforma tu pasión por el cabello y el estilismo en una <strong>carrera profesional</strong> con la 
+  <span class="font-semibold">Escuela de Peluquería de Esmera School</span>. 
+  Domina las <strong>técnicas más innovadoras</strong>, desarrolla tu creatividad y destaca en el dinámico mundo de la peluquería. 
+  ¡<span class="font-bold">Dale estilo a tu futuro</span> con nosotros!
+</p>
+
       `,
-    images: [
-      "https://picsum.photos/1200/400?random=10",
-      "https://picsum.photos/1200/400?random=11",
+
+    hex_color: "#7C3AED",
+    benefits: [
+      {
+        icon: FaBriefcase,
+        title: "Alta demanda laboral",
+        description:
+          "El sector de la peluquería cuenta con una alta demanda de estilistas, tanto en salones de belleza como en emprendimientos independientes.",
+      },
+      {
+        icon: FaPalette,
+        title: "Creatividad y expresión",
+        description:
+          "La peluquería te permite expresar tu creatividad mediante cortes, coloraciones y peinados únicos, adaptados a las últimas tendencias.",
+      },
+      {
+        icon: FaChartLine,
+        title: "Oportunidades de crecimiento",
+        description:
+          "El sector de la belleza está en constante evolución, abriendo amplias oportunidades para el desarrollo profesional y el crecimiento de negocios.",
+      },
+      {
+        icon: FaLightbulb,
+        title: "Innovación en tendencias",
+        description:
+          "La constante innovación en técnicas y estilos te permite estar a la vanguardia, ofreciendo a tus clientes lo último en tendencias de peluquería.",
+      },
     ],
-    banner: bannerTest,
-    btn_color: "bg-green-700",
     courses: [
       {
-        id: "corte-femenino",
-        name: "Corte Femenino",
+        id: "master-internacional-peluqueria",
+        name: "Master Internacional en Peluquería",
         description:
           "Cortes modernos para mujeres que buscan estilo, desde cortes clásicos hasta los más innovadores.",
         duration: "3 meses",
         image: "https://picsum.photos/400/200?random=12",
-        isPopular: true,
+        isInternational: true,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -395,19 +325,19 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "peluqueria-profesional-esmera",
+          "auxiliar-peluqueria",
+          "alto-rendimiento-peluqueria",
         ],
       },
       {
-        id: "coloracion-avanzada",
-        name: "Coloración Avanzada",
+        id: "peluqueria-profesional-esmera",
+        name: "Peluquería Profesional Esmera",
         description:
-          "Técnicas avanzadas de coloración para cabellos rubios, tintes complejos y tonos vibrantes.",
+          "Cortes modernos para mujeres que buscan estilo, desde cortes clásicos hasta los más innovadores.",
         duration: "3 meses",
-        image: "https://picsum.photos/400/200?random=13",
-        isPopular: false,
+        image: "https://picsum.photos/400/200?random=12",
+        isInternational: false,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -426,19 +356,19 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "master-internacional-peluqueria",
+          "alto-rendimiento-peluqueria",
+          "auxiliar-peluqueria",
         ],
       },
       {
-        id: "corte-degradado",
-        name: "Corte Degradado",
+        id: "auxiliar-peluqueria",
+        name: "Auxiliar en Peluqueria",
         description:
-          "Domina la técnica de corte degradado, adaptado tanto para hombres como mujeres.",
-        duration: "2 meses",
-        image: "https://picsum.photos/400/200?random=14",
-        isPopular: false,
+          "Cortes modernos para mujeres que buscan estilo, desde cortes clásicos hasta los más innovadores.",
+        duration: "3 meses",
+        image: "https://picsum.photos/400/200?random=12",
+        isInternational: false,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -457,19 +387,19 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "master-internacional-peluqueria",
+          "alto-rendimiento-peluqueria",
+          "peluqueria-profesional-esmera",
         ],
       },
       {
-        id: "peinados-de-boda",
-        name: "Peinados de Boda",
+        id: "colorimetria-nivel-i",
+        name: "Colorimetría Nivel I",
         description:
-          "Aprende a realizar peinados elegantes y sofisticados para novias y ocasiones especiales.",
-        duration: "1 mes",
-        image: "https://picsum.photos/400/200?random=15",
-        isPopular: true,
+          "Cortes modernos para mujeres que buscan estilo, desde cortes clásicos hasta los más innovadores.",
+        duration: "3 meses",
+        image: "https://picsum.photos/400/200?random=12",
+        isInternational: false,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -488,19 +418,19 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "peluqueria-plato",
+          "alto-rendimiento-peluqueria",
+          "auxiliar-peluqueria",
         ],
       },
       {
-        id: "corte-y-coloracion-unisex",
-        name: "Corte y Coloración Unisex",
+        id: "colorimetria-nivel-ii",
+        name: "Colorimetría Nivel II",
         description:
-          "Curso integral que combina técnicas de corte y coloración para ambos géneros.",
-        duration: "4 meses",
-        image: "https://picsum.photos/400/200?random=16",
-        isPopular: false,
+          "Cortes modernos para mujeres que buscan estilo, desde cortes clásicos hasta los más innovadores.",
+        duration: "3 meses",
+        image: "https://picsum.photos/400/200?random=12",
+        isInternational: false,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -519,19 +449,19 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "auxiliar-peluqueria",
+          "alto-rendimiento-peluqueria",
+          "peluqueria-plato",
         ],
       },
       {
-        id: "corte-y-peinado-hombre",
-        name: "Corte y Peinado de Hombre",
+        id: "peluqueria-plato",
+        name: "Peluqueria de Plató",
         description:
-          "Especialízate en cortes y peinados masculinos, desde los más clásicos hasta los más modernos.",
-        duration: "2 meses",
-        image: "https://picsum.photos/400/200?random=17",
-        isPopular: false,
+          "Cortes modernos para mujeres que buscan estilo, desde cortes clásicos hasta los más innovadores.",
+        duration: "3 meses",
+        image: "https://picsum.photos/400/200?random=12",
+        isInternational: false,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -550,46 +480,93 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "master-internacional-peluqueria",
+          "auxiliar-peluqueria",
+          "peluqueria-plato",
         ],
       },
-    ],
-    benefits: [
       {
-        title: "Alta demanda laboral",
+        id: "alto-rendimiento-peluqueria",
+        name: "Curso Alto Rendimiento en Peluquería",
         description:
-          "Los servicios de barbería están en constante crecimiento, con muchas oportunidades laborales tanto en salones como de forma independiente.",
+          "Cortes modernos para mujeres que buscan estilo, desde cortes clásicos hasta los más innovadores.",
+        duration: "3 meses",
+        image: "https://picsum.photos/400/200?random=12",
+        isInternational: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "master-internacional-peluqueria",
+          "alto-rendimiento-peluqueria",
+          "peluqueria-profesional-esmera",
+        ],
       },
     ],
   },
   maquillaje: {
-    benefits: [],
-
-    title: "Academia de Maquillaje",
+    title: "Cursos de Maquillaje",
     bannerMobile: bannerMobilePeluqueria,
     bannerDesktop: bannerDesktopPeluqueria,
     description_html: `
-        <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
-          Desarrolla tu arte con los mejores cursos de <strong>maquillaje profesional</strong>. Aprende técnicas innovadoras para realzar la belleza, desde lo más natural hasta lo más creativo.
-        </p>
+       <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
+  Transforma tu pasión por el maquillaje en una <strong>carrera profesional</strong> con la 
+  <span class="font-semibold">Escuela de Maquillaje de Esmera School</span>. 
+  Domina las <strong>técnicas más actuales en makeup social, artístico y profesional</strong>, potencia tu estilo y deja huella en el mundo de la belleza. 
+  ¡<span class="font-bold">Dale color a tu futuro</span> con nosotros!
+</p>
+
       `,
-    images: [
-      "https://picsum.photos/1200/400?random=18",
-      "https://picsum.photos/1200/400?random=19",
+    hex_color: "#F472B6",
+    benefits: [
+      {
+        icon: FaMagic,
+        title: "Alta demanda laboral",
+        description:
+          "El sector del maquillaje está en constante crecimiento, con alta demanda en salones, producciones cinematográficas y trabajos freelance.",
+      },
+      {
+        icon: FaSmile,
+        title: "Expresión creativa",
+        description:
+          "El maquillaje te permite plasmar tu creatividad, adaptando estilos y tendencias para realzar la belleza de cada persona.",
+      },
+      {
+        icon: FaStar,
+        title: "Oportunidades en el mundo del espectáculo",
+        description:
+          "Trabaja en producciones, sesiones fotográficas y eventos, aprovechando la amplia oferta que tiene la industria del entretenimiento.",
+      },
+      {
+        icon: FaHeart,
+        title: "Impacto en la autoestima",
+        description:
+          "El maquillaje no solo embellece, sino que también empodera a las personas, ayudándolas a sentirse seguras y a resaltar su individualidad.",
+      },
     ],
-    banner: bannerTest,
-    btn_color: "bg-pink-700",
     courses: [
       {
-        id: "maquillaje-basico",
-        name: "Maquillaje Básico",
+        id: "master-internacional-maquillaje",
+        name: "Master Internacional en Maquillaje",
         description:
           "Curso introductorio para aprender técnicas básicas de maquillaje y cuidado de la piel.",
         duration: "2 meses",
         image: "https://picsum.photos/400/200?random=20",
-        isPopular: true,
+        isInternational: true,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -608,19 +585,19 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "master-maquillaje",
+          "iniciacion-maquillaje",
+          "automaquillaje",
         ],
       },
       {
-        id: "maquillaje-de-ojos",
-        name: "Maquillaje de Ojos",
+        id: "master-maquillaje",
+        name: "Master en Maquillaje",
         description:
-          "Especialízate en las técnicas de maquillaje de ojos, desde lo más sencillo hasta lo más elaborado.",
-        duration: "1 mes",
-        image: "https://picsum.photos/400/200?random=21",
-        isPopular: false,
+          "Curso introductorio para aprender técnicas básicas de maquillaje y cuidado de la piel.",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=20",
+        isInternational: false,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -639,19 +616,19 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "master-internacional-maquillaje",
+          "iniciacion-maquillaje",
+          "automaquillaje",
         ],
       },
       {
-        id: "maquillaje-de-noche",
-        name: "Maquillaje de Noche",
+        id: "iniciacion-maquillaje",
+        name: "Iniciación al Maquillaje",
         description:
-          "Aprende las técnicas para un maquillaje de noche perfecto, ideal para eventos especiales.",
-        duration: "1 mes",
-        image: "https://picsum.photos/400/200?random=22",
-        isPopular: true,
+          "Curso introductorio para aprender técnicas básicas de maquillaje y cuidado de la piel.",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=20",
+        isInternational: false,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -670,19 +647,19 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "master-internacional-maquillaje",
+          "automaquillaje",
+          "master-maquillaje",
         ],
       },
       {
-        id: "maquillaje-de-boda",
-        name: "Maquillaje de Boda",
+        id: "automaquillaje",
+        name: "Automaquillaje",
         description:
-          "Curso especializado en técnicas de maquillaje para novias, que incluye los mejores consejos y trucos.",
-        duration: "1 mes",
-        image: "https://picsum.photos/400/200?random=23",
-        isPopular: false,
+          "Curso introductorio para aprender técnicas básicas de maquillaje y cuidado de la piel.",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=20",
+        isInternational: false,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -701,39 +678,62 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "master-internacional-maquillaje",
+          "master-maquillaje",
+          "iniciacion-maquillaje",
         ],
       },
     ],
   },
   estetica: {
-    benefits: [],
-
-    title: "Academia de Estética",
+    title: "Cursos de Estética",
     bannerMobile: bannerMobilePeluqueria,
     bannerDesktop: bannerDesktopPeluqueria,
     description_html: `
-        <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
-          Conviértete en un experto en estética y cuidados faciales. Aprende técnicas de tratamientos avanzados para el cuidado y rejuvenecimiento de la piel.
-        </p>
+      <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
+  Transforma tu pasión por el cuidado y la belleza en una <strong>carrera profesional</strong> con la 
+  <span class="font-semibold">Escuela de Estética de Esmera School</span>. 
+  Aprende las <strong>últimas técnicas en estética facial y corporal</strong>, potencia tu talento y marca tendencia en el mundo del bienestar y la imagen personal. 
+  ¡<span class="font-bold">Impulsa tu futuro con nosotros</span>!
+</p>
+
       `,
-    images: [
-      "https://picsum.photos/1200/400?random=24",
-      "https://picsum.photos/1200/400?random=25",
+    hex_color: "#34D399",
+    benefits: [
+      {
+        icon: FaHeartbeat,
+        title: "Alta demanda laboral",
+        description:
+          "La industria estética está en auge, ofreciendo múltiples oportunidades laborales en salones, spas y clínicas de belleza.",
+      },
+      {
+        icon: FaLightbulb,
+        title: "Innovación en técnicas",
+        description:
+          "La constante evolución en tratamientos y tecnología te permite estar a la vanguardia del sector estético.",
+      },
+      {
+        icon: FaHeart,
+        title: "Bienestar integral",
+        description:
+          "El sector estético promueve el cuidado personal y el bienestar integral, combinando salud y belleza.",
+      },
+      {
+        icon: FaStar,
+        title: "Crecimiento profesional",
+        description:
+          "Formarte en estética abre puertas a especializaciones y oportunidades de desarrollo en un mercado competitivo.",
+      },
     ],
-    banner: bannerTest,
-    btn_color: "bg-purple-700",
     courses: [
       {
-        id: "faciales",
-        name: "Tratamientos Faciales",
+        id: "master-internacional-estetica",
+        name: "Master Internacional en Estética",
         description:
           "Curso especializado en tratamientos faciales y rejuvenecimiento, incluyendo técnicas antiarrugas y exfoliación.",
         duration: "2 meses",
         image: "https://picsum.photos/400/200?random=26",
-        isPopular: true,
+        isInternational: true,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -752,19 +752,143 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "estetica-integral-esmera",
+          "estetica-facial",
+          "estetica-corporal",
+        ],
+      },
+      {
+        id: "estetica-integral-esmera",
+        name: "Estética Integral Esmera",
+        description:
+          "Curso especializado en tratamientos faciales y rejuvenecimiento, incluyendo técnicas antiarrugas y exfoliación.",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=26",
+        isInternational: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "master-internacional-estetica",
+          "estetica-facial",
+          "estetica-corporal",
+        ],
+      },
+      {
+        id: "estetica-facial",
+        name: "Estética Facial",
+        description:
+          "Curso especializado en tratamientos faciales y rejuvenecimiento, incluyendo técnicas antiarrugas y exfoliación.",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=26",
+        isInternational: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "estetica-integral-esmera",
+          "master-internacional-estetica",
+          "estetica-corporal",
+        ],
+      },
+      {
+        id: "estetica-corporal",
+        name: "Estética Corporal",
+        description:
+          "Curso especializado en tratamientos faciales y rejuvenecimiento, incluyendo técnicas antiarrugas y exfoliación.",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=26",
+        isInternational: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "estetica-facial",
+          "master-internacional-estetica",
+          "depilacion",
+        ],
+      },
+      {
+        id: "electroestetica",
+        name: "Electroestética",
+        description:
+          "Curso especializado en tratamientos faciales y rejuvenecimiento, incluyendo técnicas antiarrugas y exfoliación.",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=26",
+        isInternational: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "master-internacional-estetica",
+          "estetica-integral-esmera",
+          "estetica-corporal",
         ],
       },
       {
         id: "depilacion",
-        name: "Depilación con Cera",
+        name: "Depilación",
         description:
-          "Aprende a realizar depilaciones con cera, técnicas para una depilación perfecta y duradera.",
-        duration: "1 mes",
-        image: "https://picsum.photos/400/200?random=27",
-        isPopular: false,
+          "Curso especializado en tratamientos faciales y rejuvenecimiento, incluyendo técnicas antiarrugas y exfoliación.",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=26",
+        isInternational: false,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -783,38 +907,60 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "master-internacional-estetica",
+          "estetica-facial",
+          "estetica-corporal",
         ],
       },
     ],
   },
   unas: {
-    benefits: [],
-    title: "Academia de Uñas",
+    title: "Cursos de Uñas",
     bannerMobile: bannerMobilePeluqueria,
     bannerDesktop: bannerDesktopPeluqueria,
     description_html: `
-        <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
-          Aprende a crear diseños innovadores en uñas con técnicas de manicure, pedicure y más. Conviértete en un profesional del cuidado de las uñas.
-        </p>
-      `,
-    images: [
-      "https://picsum.photos/1200/400?random=28",
-      "https://picsum.photos/1200/400?random=29",
+    <p class="text-xs lg:text-sm text-gray-200 mb-4 max-w-lg">
+  Transforma tu pasión por el diseño de uñas en una <strong>carrera profesional</strong> con la 
+  <span class="font-semibold">Escuela de Uñas de Esmera School</span>. 
+  Aprende las <strong>técnicas más innovadoras en esculpido, nail art y cuidado profesional</strong>, desarrollá tu creatividad y destacá en el universo de la manicura moderna. 
+  ¡<span class="font-bold">Empezá a construir tu futuro con estilo</span>!
+</p>`,
+    hex_color: "#FB7185",
+    benefits: [
+      {
+        icon: FaPaintBrush,
+        title: "Creatividad en Nail Art",
+        description:
+          "El nail art ofrece infinitas posibilidades creativas, permitiéndote experimentar con diseños únicos y personalizados en cada cliente.",
+      },
+      {
+        icon: FaHeartbeat,
+        title: "Cuidado y Salud de las Uñas",
+        description:
+          "Mantener unas uñas bien cuidadas no solo embellece, sino que también promueve la salud y previene problemas como infecciones y fragilidad.",
+      },
+      {
+        icon: FaStar,
+        title: "Crecimiento Profesional",
+        description:
+          "El mercado del nail art está en auge, abriendo oportunidades laborales en salones y centros de estética, y permitiendo especialización.",
+      },
+      {
+        icon: FaLightbulb,
+        title: "Innovación Constante",
+        description:
+          "Nuevas técnicas y productos llegan constantemente al mercado, lo que impulsa la innovación y te permite estar a la vanguardia en tendencias.",
+      },
     ],
-    banner: bannerTest,
-    btn_color: "bg-teal-700",
     courses: [
       {
-        id: "manicure",
-        name: "Manicure Profesional",
+        id: "master-internacional-unas",
+        name: "Master Internacional en Uñas",
         description:
           "Curso completo de manicure profesional, incluyendo técnicas de esmaltado, diseño y cuidado de las uñas.",
         duration: "2 meses",
         image: "https://picsum.photos/400/200?random=30",
-        isPopular: true,
+        isInternational: true,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -833,50 +979,19 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "master-unas-esmera",
+          "estetica-manos-y-pies",
+          "mano-alzada",
         ],
       },
       {
-        id: "pedicure",
-        name: "Pedicure Profesional",
+        id: "master-unas-esmera",
+        name: "Master en Uñas Esmera",
         description:
-          "Especialízate en el cuidado y tratamiento de los pies, incluye técnicas de pedicure y diseño de uñas.",
-        duration: "1 mes",
-        image: "https://picsum.photos/400/200?random=31",
-        isPopular: false,
-        image2: bannerTest, // Imagen para el curso
-        offersYou:
-          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
-        targetAudience:
-          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
-        temary: [
-          "Módulo 1: Fundamentos de la Barbería",
-          "Módulo 2: Técnicas de Corte y Afeitado",
-          "Módulo 3: Estilos Modernos y Clásicos",
-          "Módulo 4: Gestión de una Barbería",
-        ],
-        outputs: [
-          "Trabajo en barberías internacionales",
-          "Emprendimiento: abre tu propia barbería",
-          "Asesoría de imagen personal",
-          "Formador para nuevos barberos",
-        ],
-        relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
-        ],
-      },
-      {
-        id: "diseño-de-unas",
-        name: "Diseño de Uñas",
-        description:
-          "Curso de diseño avanzado de uñas, desde el arte simple hasta las tendencias más innovadoras.",
+          "Curso completo de manicure profesional, incluyendo técnicas de esmaltado, diseño y cuidado de las uñas.",
         duration: "2 meses",
-        image: "https://picsum.photos/400/200?random=32",
-        isPopular: true,
+        image: "https://picsum.photos/400/200?random=30",
+        isInternational: false,
         image2: bannerTest, // Imagen para el curso
         offersYou:
           "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
@@ -895,9 +1010,133 @@ const courses: Categories = {
           "Formador para nuevos barberos",
         ],
         relatedCourses: [
-          "corte-degradado",
-          "corte-y-peinado-de-hombre",
-          "tendencias-2025",
+          "master-internacional-unas",
+          "estetica-manos-y-pies",
+          "mano-alzada",
+        ],
+      },
+      {
+        id: "estetica-manos-y-pies",
+        name: "Estética de Manos y Pies",
+        description:
+          "Curso completo de manicure profesional, incluyendo técnicas de esmaltado, diseño y cuidado de las uñas.",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=30",
+        isInternational: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "master-internacional-unas",
+          "propress-system",
+          "manicura-rusa",
+        ],
+      },
+      {
+        id: "propress-system",
+        name: "ProPress System",
+        description:
+          "Curso completo de manicure profesional, incluyendo técnicas de esmaltado, diseño y cuidado de las uñas.",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=30",
+        isInternational: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "master-internacional-unas",
+          "mano-alzada",
+          "estetica-manos-y-pies",
+        ],
+      },
+      {
+        id: "mano-alzada",
+        name: "Mano Alzada",
+        description:
+          "Curso completo de manicure profesional, incluyendo técnicas de esmaltado, diseño y cuidado de las uñas.",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=30",
+        isInternational: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "propress-system",
+          "estetica-manos-y-pies",
+          "master-internacional-unas",
+        ],
+      },
+      {
+        id: "manicura-rusa",
+        name: "Manicura Rusa",
+        description:
+          "Curso completo de manicure profesional, incluyendo técnicas de esmaltado, diseño y cuidado de las uñas.",
+        duration: "2 meses",
+        image: "https://picsum.photos/400/200?random=30",
+        isInternational: false,
+        image2: bannerTest, // Imagen para el curso
+        offersYou:
+          "Este curso te ofrece una formación completa en todas las técnicas de barbería modernas y clásicas, además de enseñarte a gestionar tu propia barbería. Al finalizar, tendrás la capacidad de ser un barbero altamente calificado y emprendedor.",
+        targetAudience:
+          "Este curso está dirigido a personas que desean comenzar una carrera en el mundo de la barbería, así como a aquellos que ya tienen experiencia pero quieren perfeccionar sus habilidades y obtener una certificación internacional.",
+        temary: [
+          "Módulo 1: Fundamentos de la Barbería",
+          "Módulo 2: Técnicas de Corte y Afeitado",
+          "Módulo 3: Estilos Modernos y Clásicos",
+          "Módulo 4: Gestión de una Barbería",
+        ],
+        outputs: [
+          "Trabajo en barberías internacionales",
+          "Emprendimiento: abre tu propia barbería",
+          "Asesoría de imagen personal",
+          "Formador para nuevos barberos",
+        ],
+        relatedCourses: [
+          "master-internacional-unas",
+          "mano-alzada",
+          "propress-system",
         ],
       },
     ],

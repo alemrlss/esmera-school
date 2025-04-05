@@ -3,7 +3,6 @@ import courses from "../data/courses"; // Asumo que los cursos están en un arch
 import CourseList from "../components/Courses/CourseList"; // Componente que ya lista los cursos
 import { useRef } from "react";
 import Course from "../types/Course";
-import { Award } from "lucide-react";
 
 // Tipado para la categoría de cursos
 interface CourseCategory {
@@ -12,6 +11,8 @@ interface CourseCategory {
   title: string;
   description_html: string;
   btn_color: string;
+  text_color: string;
+  hex_color: string;
   benefits?: {
     icon: JSX.Element; // Usamos JSX.Element para los íconos
     title: string;
@@ -20,7 +21,7 @@ interface CourseCategory {
   courses: Course[]; // Aquí puedes poner el tipo adecuado de curso
 }
 
-const CourseDetails = () => {
+const CourseDetails: React.FC = () => {
   const { category } = useParams<{ category: string }>(); // Tipamos useParams
   const categoryData = courses[category as keyof typeof courses] as
     | CourseCategory
@@ -80,7 +81,10 @@ const CourseDetails = () => {
             ></p>
             <button
               onClick={handleScrollToCourseList} // Llamamos la función cuando se hace clic
-              className={`d-btn d-btn-md lg:d-btn-lg py-3 text border-none text-white rounded-3xl shadow-md hover:shadow-lg transition-all ${categoryData.btn_color} sm:px-4 sm:py-2 sm:text-sm md:px-6 md:py-3 md:text-base`}
+              className={`d-btn d-btn-md lg:d-btn-lg py-3 text border-none text-white rounded-3xl shadow-md hover:shadow-lg transition-all sm:px-4 sm:py-2 sm:text-sm md:px-6 md:py-3 md:text-base`}
+              style={{
+                backgroundColor: categoryData.hex_color,
+              }}
             >
               Ver todos los cursos
             </button>
@@ -91,13 +95,19 @@ const CourseDetails = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mx-0 lg:mx-16">
             {categoryData.benefits?.map((benefit, index) => {
+              const Icon = benefit.icon as unknown as React.ComponentType<{
+                className?: string;
+              }>;
               return (
                 <div
                   key={index}
                   className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md space-y-4"
                 >
-                  <div>
-                    <Award className="w-12 h-12 text-blue-500" />
+                  <div
+                    style={{ color: categoryData.hex_color }}
+                    className="w-16 h-16 flex items-center justify-center rounded-full"
+                  >
+                    <Icon className="w-12 h-12" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">
                     {benefit.title}

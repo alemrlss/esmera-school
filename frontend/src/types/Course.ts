@@ -5,7 +5,7 @@ export default interface Course {
   duration: string;
   image: string;
   image2: string;
-  isPopular: boolean;
+  isInternational: boolean;
   offersYou: string;
   targetAudience: string;
   temary: string[];

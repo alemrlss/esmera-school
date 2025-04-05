@@ -8,6 +8,7 @@ import CourseDetails from "./pages/CourseDetails";
 import CursoInfo from "./pages/CourseInfo";
 import NotFoundPage from "./pages/NotFoundPage";
 import MiCampus from "./pages/MiCampus";
+import TipsUnas from "./pages/TipsUnas";
 function App() {
   return (
     <Router>
@@ -17,6 +18,10 @@ function App() {
           <Route path="conoce-esmera" element={<ConoceEsmeraPage />} />
           <Route path="contacto" element={<ContactPage />} />
           <Route path="noticias" element={<NoticesPage />} />
+          <Route
+            path="/noticias/5-tips-para-mantener-tus-unas-limpias"
+            element={<TipsUnas />}
+          />
           <Route path="mi-campus" element={<MiCampus />} />
 
           <Route path="/cursos/:category" element={<CourseDetails />} />

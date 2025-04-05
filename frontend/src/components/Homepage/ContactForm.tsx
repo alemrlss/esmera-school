@@ -1,5 +1,5 @@
-import { Mail, Phone, User } from "lucide-react";
 import { useState } from "react";
+import { FaMailBulk, FaPhone, FaUser } from "react-icons/fa";
 
 function ContactForm() {
   const [isChecked, setIsChecked] = useState(false);
@@ -30,7 +30,7 @@ function ContactForm() {
                   placeholder="Ingrese su nombre"
                   className="w-full p-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0057a8] focus:outline-none"
                 />
-                <User className="absolute top-3 left-3 text-gray-500" />
+                <FaUser className="absolute top-3 left-3 text-gray-500" />
               </div>
             </div>
 
@@ -44,7 +44,7 @@ function ContactForm() {
                   placeholder="Ingrese su correo"
                   className="w-full p-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0057a8] focus:outline-none"
                 />
-                <Mail className="absolute top-3 left-3 text-gray-500" />
+                <FaMailBulk className="absolute top-3 left-3 text-gray-500" />
               </div>
             </div>
 
@@ -59,7 +59,7 @@ function ContactForm() {
                   placeholder="Ingrese su número de teléfono"
                   className="w-full p-3 pl-10 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#0057a8] focus:outline-none"
                 />
-                <Phone className="absolute top-3 left-3 text-gray-500" />
+                <FaPhone className="absolute top-3 left-3 text-gray-500" />
               </div>
             </div>
 

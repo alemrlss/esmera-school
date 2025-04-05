@@ -1,9 +1,8 @@
-
 function WhatsappButton() {
   return (
-    <div className="d-tooltip d-tooltip-open d-tooltip-right" >
+    <div className="d-tooltip d-tooltip-open d-tooltip-right">
       <a
-        href="#"
+        href="https://wa.me/34637208352?text=¡Hola!%20Me%20gustaría%20obtener%20más%20información%20sobre%20la%20escuela."
         target="_blank"
         rel="noreferrer noopener"
         className="fixed bottom-4 left-4 z-50 inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#25d366]"

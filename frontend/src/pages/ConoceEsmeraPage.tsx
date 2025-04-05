@@ -1,12 +1,12 @@
-import { Book, Briefcase, GraduationCap, Users } from "lucide-react";
-import headerImageMobile from "../assets/test/movil.png";
-import headerImageDesktop from "../assets/test/desktop-test.png";
+import headerImageMobile from "../assets/conoce-esmera/conoce-esmera-movil.png";
+import headerImageDesktop from "../assets/conoce-esmera/conoce-esmera.png";
 import { motion } from "framer-motion";
-import amistadImage from "../assets/valores/amistad.png";
-import liderazgoImage from "../assets/valores/liderazgo.png";
-import servicioImage from "../assets/valores/servicio.png";
-import profesionalImage from "../assets/valores/profesional.png";
+import amistadImage from "../assets/values/amistad.png";
+import liderazgoImage from "../assets/values/liderazgo.png";
+import servicioImage from "../assets/values/servicio.png";
+import profesionalImage from "../assets/values/profesional.png";
 import { useNavigate } from "react-router-dom";
+import { FaBook, FaBriefcase, FaGraduationCap, FaUsers } from "react-icons/fa";
 function ConoceEsmeraPage() {
   const navigate = useNavigate();
   return (
@@ -104,7 +104,7 @@ function ConoceEsmeraPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mx-auto max-w-screen-lg">
           <div className="card-feature p-3">
             <div className="card-body text-center">
-              <GraduationCap className="w-12 h-12 mx-auto text-white" />
+              <FaGraduationCap className="w-12 h-12 mx-auto text-white" />
               <p className="card-title mt-4 text-lg sm:text-xl">
                 Ofrecer una{" "}
                 <span className="font-bold">formación integral</span> y{" "}
@@ -114,7 +114,7 @@ function ConoceEsmeraPage() {
           </div>
           <div className="card-feature p-3">
             <div className="card-body text-center">
-              <Users className="w-12 h-12 mx-auto text-white" />
+              <FaUsers className="w-12 h-12 mx-auto text-white" />
               <p className="card-title mt-4 text-lg sm:text-xl">
                 Formar a futuros{" "}
                 <span className="font-bold">profesionales</span>
@@ -123,7 +123,7 @@ function ConoceEsmeraPage() {
           </div>
           <div className="card-feature p-3">
             <div className="card-body text-center">
-              <Briefcase className="w-12 h-12 mx-auto text-white" />
+              <FaBriefcase className="w-12 h-12 mx-auto text-white" />
               <p className="card-title mt-4 text-lg sm:text-xl">
                 Cursos actualizados al{" "}
                 <span className="font-bold">mercado laboral</span>
@@ -132,7 +132,7 @@ function ConoceEsmeraPage() {
           </div>
           <div className="card-feature p-3">
             <div className="card-body text-center">
-              <Book className="w-12 h-12 mx-auto text-white" />
+              <FaBook className="w-12 h-12 mx-auto text-white" />
               <p className="card-title mt-4 text-lg sm:text-xl">
                 Educación continua con{" "}
                 <span className="font-bold">contenidos innovadores</span>

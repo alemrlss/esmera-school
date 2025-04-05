@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import headerImageMobile from "../assets/test/movil.png";
-import headerImageDesktop from "../assets/test/desktop-test.png";
+import headerImageMobile from "../assets/contact/contact-movil.png";
+import headerImageDesktop from "../assets/contact/contact.png";
 import saraImage from "../assets/testimonios/sara.png";
 import fernandoImage from "../assets/testimonios/fernando.png";
 import sandraImage from "../assets/testimonios/sandra.png";
@@ -169,7 +169,7 @@ function ContactPage() {
                   Sandra Cardona
                 </h3>
                 <p className="text-sm text-gray-500">
-                  Estudiante de Peluqueria 
+                  Estudiante de Peluqueria
                 </p>
               </div>
             </div>
@@ -199,9 +199,7 @@ function ContactPage() {
                 <h3 className="text-xl font-semibold text-gray-800">
                   Sara Salazar
                 </h3>
-                <p className="text-sm text-gray-500">
-                  Estudiante de Estètica  
-                </p>
+                <p className="text-sm text-gray-500">Estudiante de Estètica</p>
               </div>
             </div>
             <p className="text-gray-600 italic">

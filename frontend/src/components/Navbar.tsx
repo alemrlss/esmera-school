@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo-blanco.png";
+import logo from "../assets/logos/logo-blanco.png";
 import useGoToPage from "../hooks/useGoToPage"; // Importamos el hook
-import { GraduationCap } from "lucide-react";
+import { FaGraduationCap } from "react-icons/fa";
 
 export default function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -143,7 +143,7 @@ export default function Navbar() {
             onClick={() => goToPage("/mi-campus")}
             className="bg-[#d57f11] text-white py-2 px-6 rounded-full shadow-lg  transition-all duration-300 cursor-pointer transform hover:scale-95 flex items-center space-x-2"
           >
-            <GraduationCap size={20} /> {/* Ícono de graduación */}
+            <FaGraduationCap  size={20} /> {/* Ícono de graduación */}
             <span>Mi Campus</span>
           </button>
         </div>
@@ -219,7 +219,7 @@ export default function Navbar() {
               }}
               className="bg-[#d57f11] text-white py-2 px-6 rounded-full shadow-lg  transition-all duration-300 cursor-pointer transform hover:scale-95 flex items-center space-x-2"
             >
-              <GraduationCap size={20} /> {/* Ícono de graduación */}
+              <FaGraduationCap  size={20} /> {/* Ícono de graduación */}
               <span>Mi Campus</span>
             </button>
           </motion.div>

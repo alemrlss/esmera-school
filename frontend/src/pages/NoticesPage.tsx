@@ -1,43 +1,17 @@
 import { motion } from "framer-motion";
-import headerImageMobile from "../assets/test/movil.png";
-import headerImageDesktop from "../assets/test/desktop-test.png";
+import headerImageMobile from "../assets/blog/blog-movil.png";
+import headerImageDesktop from "../assets/blog/blog.png";
+import useGoToPage from "../hooks/useGoToPage";
 
 function NoticesPage() {
+  const goToPage = useGoToPage();
   const news = [
     {
       title: "5 Tips para mantener tus uñas limpias",
+      sortUserPlugins: "5-tips-para-mantener-tus-unas-limpias",
       description:
         "Descubre algunos consejos prácticos para tener unas uñas siempre limpias y saludables.",
       imageUrl: "https://picsum.photos/300/300",
-    },
-    {
-      title: "Cómo mejorar tu productividad diaria",
-      description:
-        "Mejora tu enfoque y aumenta tu eficiencia con estos sencillos tips.",
-      imageUrl: "https://picsum.photos/400/400",
-    },
-    {
-      title: "Tendencias en la moda 2025",
-      description:
-        "Conoce las principales tendencias que dominarán la moda este año.",
-      imageUrl: "https://picsum.photos/600/600",
-    },
-    {
-      title: "Beneficios de meditar cada día",
-      description:
-        "La meditación puede cambiar tu vida, aprende sus beneficios.",
-      imageUrl: "https://picsum.photos/500/500",
-    },
-    {
-      title: "Guía para mantener un estilo de vida saludable",
-      description:
-        "Comer bien y hacer ejercicio, aprende a mantenerte saludable todos los días.",
-      imageUrl: "https://picsum.photos/501/501",
-    },
-    {
-      title: "Los mejores consejos para cuidar tu piel",
-      description: "Cuida tu piel con estos simples pero efectivos consejos.",
-      imageUrl: "https://picsum.photos/605/605",
     },
   ];
 
@@ -91,7 +65,12 @@ function NoticesPage() {
                   {article.description}
                 </p>
                 <div className="d-card-actions justify-end mt-4">
-                  <button className="d-btn d-btn-primary d-btn-md bg-[#0057a8] border-[#0057a8] hover:bg-transparent hover:text-[#0057a8] transition-all duration-300">
+                  <button
+                    onClick={() => {
+                      goToPage(`/noticias/${article.sortUserPlugins}`);
+                    }}
+                    className="d-btn d-btn-primary d-btn-md bg-[#0057a8] border-[#0057a8] hover:bg-transparent hover:text-[#0057a8] transition-all duration-300"
+                  >
                     Leer más..
                   </button>
                 </div>

@@ -1,4 +1,3 @@
-import { ArrowUp } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
@@ -46,7 +45,6 @@ function ScrollToTopButton() {
         ease: "easeOut",
       }}
     >
-      <ArrowUp size={30} />
     </motion.button>
   );
 }
